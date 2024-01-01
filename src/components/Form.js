@@ -38,7 +38,6 @@ export default function Form() {
                 <button className="btn btn-outline-dark  mx-2 my-2" onClick={hd} >Copy Text</button>
                 <button className="btn btn-outline-secondary  mx-2 my-2" onClick={cl} >Clear The Text </button>
                 <button className="btn btn-outline-info mx-2 my-2" onClick={re} >Remove Extra Spaces</button>
-                <button className="btn btn-outline-info mx-2 my-2" onClick={re} >Remove Extra Spaces</button>
             </div>
             <div className="container">
                 <h2>Your Text Summary</h2>
