@@ -35,7 +35,7 @@ function App() {
     <>
       <Navbar mode={mode} togglemode={togglemode} />
       <main className='container my-4 ' mode={mode}>
-        <label htmlFor="textbox" className="form-label my-5 text-primary" showalert={showalert}><h1>Try Welltext - The Text Analyzer</h1></label>
+
         <Alert alert={alert} />
         <Routes>
           <Route path="/" element={<Form mode={mode} togglemode={togglemode} showalert={showalert} />} />

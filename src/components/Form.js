@@ -58,17 +58,17 @@ export default function Form(props) {
         props.showalert("Text Reversed", "Success")
     }
     const generateRandomText = () => {
-        const length = 100; // Adjust the desired length of your random string
-        let randomText = '';
+        // const length = 100; // Adjust the desired length of your random string
+        // let randomText = '';
 
-        // Generate random characters and append them to randomText
-        for (let i = 0; i < length; i++) {
-            const randomChar = String.fromCharCode(
-                Math.floor(Math.random() * 26) + 97 // Generates lowercase letters
-            );
-            randomText += randomChar;
-        }
-
+        // // Generate random characters and append them to randomText
+        // for (let i = 0; i < length; i++) {
+        //     const randomChar = String.fromCharCode(
+        //         Math.floor(Math.random() * 26) + 97 // Generates lowercase letters
+        //     );
+        //     randomText += randomChar;
+        // }
+        let randomText = "Lorem        ipsum                       dolor sit           amet          consectetur         adipisicing        elit. Quis           dolorem           id                distinctio nobis praesentium            et excepturi           voluptates inventore! Obcaecati nemo porro               , autem voluptate dolor                expedita. Esse             accusamus sequi              eveniet tempora       laboriosam, quod laudantium quasi deleniti repellendus quidem sit quis pariatur!"
         setText(randomText);
         props.showalert("Random Text Generated", "Success")
     }
@@ -83,17 +83,19 @@ export default function Form(props) {
     return (
         <>
             <div className="mb-3">
-                <textarea className="form-control" onChange={onchangehandler} id="textbox" value={text} rows="3" placeholder="Enter Some Text" required autoFocus></textarea>
+                <label htmlFor="textbox" className="form-label my-5 text-primary " ><h1>Try Welltext - The Text Analyzer Tool</h1></label>
+
+                <textarea className="form-control" onChange={onchangehandler} id="textbox" value={text} rows="4" placeholder="Enter Some Text" required autoFocus></textarea>
                 <button className="btn btn-outline-primary mx-2 my-4" onClick={generateRandomText} >Random Text</button>
                 <button className="btn btn-outline-success mx-2 my-2" onClick={text.length > 0 ? up : null} >Convert To Uppercase </button>
-                <button className="btn btn-outline-secondary mx-2 my-2" onClick={text.length > 0 ? handleAa : null} >Capitalize</button>
-                <button className="btn btn-outline-info mx-2 my-2" onClick={text.length > 0 ? lo : null} >Convert To Lowercase </button>
-                <button className="btn btn-outline-info mx-2 my-2" onClick={text.length > 0 ? reverseText : null} >Reverse Text</button>
-                <button className="btn btn-outline-primary mx-2 my-2" onClick={text.length > 0 ? re : null} >Remove Extra Spaces</button>
-                <button className="btn btn-outline-success mx-2 my-2" onClick={text.length > 0 ? speak : null} >Speak</button>
-                <button className="btn btn-outline-secondary  mx-2 my-2" onClick={text.length > 0 ? hd : null} >Copy Text</button>
-                <button className="btn btn-outline-primary  mx-2 my-2" onClick={text.length > 0 ? cl : null} >Clear The Text </button>
-                <button className="btn btn-outline-success  mx-2 my-2" onClick={text.length > 0 ? download : null} >Download Text</button>
+                <button className="btn btn-outline-info mx-2 my-2" onClick={text.length > 0 ? handleAa : null} >Capitalize</button>
+                <button className="btn btn-outline-primary mx-2 my-2" onClick={text.length > 0 ? lo : null} >Convert To Lowercase </button>
+                <button className="btn btn-outline-success mx-2 my-2" onClick={text.length > 0 ? reverseText : null} >Reverse Text</button>
+                <button className="btn btn-outline-info mx-2 my-2" onClick={text.length > 0 ? re : null} >Remove Extra Spaces</button>
+                <button className="btn btn-outline-primary mx-2 my-2" onClick={text.length > 0 ? speak : null} >Speak</button>
+                <button className="btn btn-outline-success  mx-2 my-2" onClick={text.length > 0 ? hd : null} >Copy Text</button>
+                <button className="btn btn-outline-info  mx-2 my-2" onClick={text.length > 0 ? download : null} >Download Text</button>
+                <button className="btn btn-outline-secondary  mx-2 my-2" onClick={text.length > 0 ? cl : null} >Clear The Text </button>
             </div>
             <div className="container">
                 <hr />
@@ -107,8 +109,8 @@ export default function Form(props) {
                     return word.length !== 0
                 }).length * 0.008} Minuts</b> </p>
                 <hr />
-                <h2 className='active'>Preview</h2>
-                <p>{text.length > 0 ? text : "Enter Something In The Text Box To Preview It Here"}</p>
+                {/* <h2 className='active'>Preview</h2>
+                <p>{text.length > 0 ? text : "Enter Something In The Text Box To Preview It Here"}</p> */}
             </div>
         </>
     )

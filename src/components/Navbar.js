@@ -50,7 +50,7 @@ export default function Navbar(props) {
         //         </div>
         //     </div>
         // </nav >
-        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} fixed-top`}>
+        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} `}>
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">WellText</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,9 +66,6 @@ export default function Navbar(props) {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/contact">Contact Us</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/blog">Blog</Link>
               </li>
             </ul>
             <form className="d-flex" role="search">
