@@ -37,6 +37,22 @@ export default function Form(props) {
         msg.text = text;
         window.speechSynthesis.speak(msg);
     }
+    const removeextralines = () => {
+        let shorttext = text.replace(/^\s*[\r\n]/gm, "")
+        setText(shorttext)
+    }
+    const removeDuplicateWords = () => {
+        // Split the input string into an array of words
+        const words = text.split(/\s+/);
+
+        // Create a Set to store unique words
+        const uniqueWords = new Set(words);
+
+        // Join the unique words back into a string and return
+        let newtext = Array.from(uniqueWords).join(' ');
+        setText(newtext)
+    }
+
 
     const handleAa = () => {
         let words = text.split(" ");
@@ -68,7 +84,7 @@ export default function Form(props) {
         //     );
         //     randomText += randomChar;
         // }
-        let randomText = "Lorem        ipsum                       dolor sit           amet          consectetur         adipisicing        elit. Quis           dolorem           id                distinctio nobis praesentium            et excepturi           voluptates inventore! Obcaecati nemo porro               , autem voluptate dolor                expedita. Esse             accusamus sequi              eveniet tempora       laboriosam, quod laudantium quasi deleniti repellendus quidem sit quis pariatur!"
+        let randomText = "Lorem    Lorem        ipsum           Lorem        ipsum                       dolor sit            dolor sit    ipsum                       dolor sit           amet          consectetur         adipisicing        elit. Quis           dolorem           id                distinctio nobis praesentium            et excepturi           voluptates inventore! Obcaecati nemo porro           Lorem        ipsum                       dolor sit    , autem voluptate dolor                expedita. Esse          Lorem        ipsum                       dolor sit            accusamus sequi              eveniet tempora       laboriosam, quod laudantium quasi deleniti repellendus quidem sit quis pariatur!"
         setText(randomText);
         props.showalert("Random Text Generated", "Success")
     }
@@ -78,14 +94,16 @@ export default function Form(props) {
         FileSaver.saveAs(blob, "welltext-download.txt")
         props.showalert("File Saved ", "Success")
     }
-
+    let textboxstyle = {
+        backgroundColor: 'grey'
+    }
 
     return (
         <>
             <div className="mb-3">
                 <label htmlFor="textbox" className="form-label my-5 text-primary " ><h1>Try Welltext - The Text Analyzer Tool</h1></label>
 
-                <textarea className="form-control" onChange={onchangehandler} id="textbox" value={text} rows="4" placeholder="Enter Some Text" required autoFocus></textarea>
+                <textarea className={`form-control `} id='textbox' onChange={onchangehandler} value={text} rows="4" placeholder="Enter Some Text" required autoFocus style={props.mode === 'dark' ? textboxstyle : null}></textarea>
                 <button className="btn btn-outline-primary mx-2 my-4" onClick={generateRandomText} >Random Text</button>
                 <button className="btn btn-outline-success mx-2 my-2" onClick={text.length > 0 ? up : null} >Convert To Uppercase </button>
                 <button className="btn btn-outline-info mx-2 my-2" onClick={text.length > 0 ? handleAa : null} >Capitalize</button>
@@ -96,6 +114,8 @@ export default function Form(props) {
                 <button className="btn btn-outline-success  mx-2 my-2" onClick={text.length > 0 ? hd : null} >Copy Text</button>
                 <button className="btn btn-outline-info  mx-2 my-2" onClick={text.length > 0 ? download : null} >Download Text</button>
                 <button className="btn btn-outline-secondary  mx-2 my-2" onClick={text.length > 0 ? cl : null} >Clear The Text </button>
+                <button className="btn btn-outline-primary mx-2 my-4" onClick={text.length > 0 ? removeextralines : null} >Remove Extra Lines</button>
+                <button className="btn btn-outline-success mx-2 my-4" onClick={text.length > 0 ? removeDuplicateWords : null} >Remove Duplicate Words</button>
             </div>
             <div className="container">
                 <hr />
