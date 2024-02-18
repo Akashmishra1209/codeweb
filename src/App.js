@@ -7,6 +7,7 @@ import Form from './components/Form';
 import PropTypes from "prop-types"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Contact from './components/Contact';
+import NotFoundPage from './components/Notfound';
 function App() {
   const [alert, setalert] = useState(null);
   const showalert = (message, type) => {
@@ -16,7 +17,7 @@ function App() {
     })
     setTimeout(() => {
       setalert(null)
-    }, 1500);
+    }, 2000);
   }
   const [mode, setmode] = useState('light')
   const togglemode = () => {
@@ -41,6 +42,8 @@ function App() {
           <Route path="/" element={<Form mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/about" element={<About mode={mode} togglemode={togglemode} />} />
           <Route path="/contact" element={<Contact mode={mode} togglemode={togglemode} />} />
+          <Route path="/tools" element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
+          <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
         </Routes>
       </main>
     </>

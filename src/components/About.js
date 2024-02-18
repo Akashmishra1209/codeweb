@@ -10,10 +10,14 @@ export default function About(props) {
         color: props.mode === 'dark' ? '#ffffff' : '#042743',
         backgroundColor: props.mode === 'dark' ? 'rgb(105,105,105)' : 'white',
     }
+    let TextStyle = {
+        color: props.mode === 'dark' ? '#ffffff' : '#042743',
+        // backgroundColor: props.mode === 'dark' ? 'rgb(105,105,105)' : 'white',
+    }
 
     return (
         <div className="container">
-            <h1 className='container '><strong>About Us</strong> </h1>
+            <h1 className='container ' style={TextStyle}><strong>About Us</strong> </h1>
             <div className="accordion" id="accordionExample">
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
@@ -23,7 +27,7 @@ export default function About(props) {
                     </h2>
                     <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div className="accordion-body text-capitalize " style={myStyle}>
-                            WellText Gives You a way to analyze your text quickly and efficiently. Be it word count, character count,Remove Extra Space,Reverse Text,Speak Text,Convert To LowerCase,Convert To Uppercase,Capitalize,Random Text Generator
+                            WellText Gives You a way to analyze your text quickly and efficiently. Be it word count, character count,Remove Extra Space,Reverse Text,Speak Text,Convert To LowerCase,Convert To Uppercase,Capitalize,Random Text Generator,Accent Remover,Extra Lines Remover And Many More
                         </div>
                     </div>
                 </div>
@@ -36,18 +40,6 @@ export default function About(props) {
                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div className="accordion-body" style={myStyle}>
                             WellText is a free character counter tool that provides instant character count & word count statistics for a given text. WellText reports the number of words and characters. Thus it is suitable for writing text with word/ character limit.
-                        </div>
-                    </div>
-                </div>
-                <div className="accordion-item">
-                    <h2 className="accordion-header" id="headingTwo">
-                        <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <strong>No Signup Or Login Required</strong>
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                        <div className="accordion-body" style={myStyle}>
-                            WellText Does Not Require Any Signup Or Login.You Can Directly Analyze Your Text
                         </div>
                     </div>
                 </div>
