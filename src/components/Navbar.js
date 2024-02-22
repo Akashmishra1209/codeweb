@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react'
+import React, { } from 'react'
 import { Link } from 'react-router-dom';
 
 export default function Navbar(props) {
@@ -16,6 +16,9 @@ export default function Navbar(props) {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/about">About</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link " aria-current="page" to="/tools">Tools</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/contact">Contact Us</Link>

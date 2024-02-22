@@ -4,8 +4,11 @@ import PropTypes from "prop-types"
 import '../../src/App.css';
 export default function Form(props) {
     const [text, setText] = useState("")
+    const [history, setHistory] = useState([]);
     const onchangehandler = (event) => {
-        setText(event.target.value);
+        let newtext = event.target.value;
+        setText(newtext);
+        setHistory([...history.slice(0, -1), newtext]);
     }
     let TextStyle = {
         color: props.mode === 'dark' ? '#ffffff' : '#042743',
@@ -107,7 +110,7 @@ export default function Form(props) {
     const removelines = () => {
         let newText = text.replace(/\r?\n|\r/g, "");
         setText(newText)
-        props.showalert("Lines Removed", "Success")
+        props.showalert("Converted To Single Line", "Success")
     }
     const removepunctuation = () => {
         let newText = text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
@@ -148,7 +151,7 @@ export default function Form(props) {
                 <h2 style={TextStyle}>Your Text Summary</h2>
                 <hr />
                 <p className='active' style={TextStyle}>
-                    The Text Contains <span className='fw-bold '> {text.split(/\s+/).filter((word) => {
+                    The Text Contains <span>{text.length > 0 ? text.split(/\r\n|\r|\n/).length : text.split(/\r\n|\r|\n/).length = 0} Lines</span><span className='fw-bold '> {text.split(/\s+/).filter((word) => {
                         return word.length !== 0
                     }).length} Words</span> And <span className='fw-bold '>{text.length} Characters</span>. </p>
                 <p style={TextStyle}>You Can Read It In <b> {text.split(/[ ]+/).filter((word) => {

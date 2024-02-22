@@ -2,12 +2,13 @@ import './App.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Alert from './components/Alert';
 import Form from './components/Form';
-import PropTypes from "prop-types"
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Contact from './components/Contact';
 import NotFoundPage from './components/Notfound';
+import Tools from './components/Tools';
 function App() {
   const [alert, setalert] = useState(null);
   const showalert = (message, type) => {
@@ -42,7 +43,7 @@ function App() {
           <Route path="/" element={<Form mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/about" element={<About mode={mode} togglemode={togglemode} />} />
           <Route path="/contact" element={<Contact mode={mode} togglemode={togglemode} />} />
-          <Route path="/tools" element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
+          <Route path="/tools" element={<Tools mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
         </Routes>
       </main>

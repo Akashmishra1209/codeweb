@@ -18,6 +18,7 @@ export default function About(props) {
     return (
         <div className="container">
             <h1 className='container ' style={TextStyle}><strong>About Us</strong> </h1>
+            <p className='container ' style={TextStyle}>WellText Is A Fast And Quick Text Analyzer Tool.It Has Many Features For Analyze Your Text Such As Convert To Uppercase,Convert To Lowercase,Capitalize Text,Speak Text And Many More. </p>
             <div className="accordion" id="accordionExample">
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
