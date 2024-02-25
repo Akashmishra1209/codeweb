@@ -2,9 +2,9 @@ import './App.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import Alert from './components/Alert';
 import Form from './components/Form';
+import Blog from './components/Blog';
 import { Routes, Route } from 'react-router-dom';
 import Contact from './components/Contact';
 import NotFoundPage from './components/Notfound';
@@ -44,8 +44,10 @@ function App() {
           <Route path="/about" element={<About mode={mode} togglemode={togglemode} />} />
           <Route path="/contact" element={<Contact mode={mode} togglemode={togglemode} />} />
           <Route path="/tools" element={<Tools mode={mode} togglemode={togglemode} showalert={showalert} />} />
+          <Route path="/post" element={<Blog mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
         </Routes>
+
       </main>
     </>
   )

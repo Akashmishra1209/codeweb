@@ -7,8 +7,8 @@ export default function Footer(props) {
         height: '25px'
     }
     return (
-        <div className='container mt-0' style={mainStyle}>
-            This Is
-        </div>
+        <footer className={`bg-body-tertiary text-center  `} style={{mainStyle}}>
+          
+        </footer>
     )
 }

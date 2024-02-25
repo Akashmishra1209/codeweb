@@ -84,16 +84,6 @@ export default function Form(props) {
         props.showalert("Text Reversed", "Success")
     }
     const generateRandomText = () => {
-        // const length = 100; // Adjust the desired length of your random string
-        // let randomText = '';
-
-        // // Generate random characters and append them to randomText
-        // for (let i = 0; i < length; i++) {
-        //     const randomChar = String.fromCharCode(
-        //         Math.floor(Math.random() * 26) + 97 // Generates lowercase letters
-        //     );
-        //     randomText += randomChar;
-        // }
         let randomText = "Lorem    Lorem        ipsum      \n \n     Lorem        ipsum                       dolor sit            dolor sit    ipsum                       dolor sit           amet          consectetur         adipisicing        elit. Quis           dolorem           id                distinctio nobis praesentium            et excepturi           voluptates inventore! Obcaecati nemo porro           Lorem        ipsum                       dolor sit    , autem voluptate dolor                expedita. Esse          Lorem        ipsum                       dolor sit            accusamus sequi              eveniet tempora       laboriosam, quod laudantium quasi deleniti repellendus quidem sit quis pariatur!"
         setText(randomText);
         props.showalert("Random Text Generated", "Success")
@@ -122,26 +112,28 @@ export default function Form(props) {
         setText(newText)
         props.showalert("Accent Removed", "Success")
     }
-    let myStyle = {
-        color: props.mode === 'dark' ? '#ffffff' : '#042743',
-        // backgroundColor: props.mode === 'dark' ? 'rgb(105,105,105)' : 'white',
+    const NumberExtractor = () => {
+        let replaced = text.replace(/\D+/g, '')
+        setText(replaced)
+        props.showalert("Numbers Extracted", "Success")
     }
     return (
         <>
             <div className="mb-3">
-                <label htmlFor="textbox" className="form-label my-2 text-primary " style={TextStyle} ><h1 style={myStyle}>Try Welltext - The Free Text Analyzer Tool</h1></label>
+                <label htmlFor="textbox" className="form-label my-2 text-primary " style={TextStyle} ><h1>Try Welltext - The Free Text Analyzer Tool</h1></label>
                 <textarea className={`form-control `} id='textbox' onChange={onchangehandler} value={text} rows="4" placeholder="Enter Some Text" required autoFocus style={props.mode === 'dark' ? textboxstyle : null}></textarea>
                 <div className="container my-4 alert alert-info ">
                     <b>Note : </b> The Remove All Lines Button Joins The All Text Into One Line One Line.It Also Can Be Used For Compressing Html,Css And Javascript.
                 </div>
-                <button className="btn btn-outline-primary mx-2 my-2" onClick={generateRandomText} >Random Text</button>
-                <button className="btn btn-outline-success mx-2 my-2" onClick={text.length > 0 ? up : null} >Convert To Uppercase </button>
-                <button className="btn btn-outline-info mx-2 my-2" onClick={text.length > 0 ? handleAa : null} >Capitalize</button>
-                <button className="btn btn-outline-primary mx-2 my-2" onClick={text.length > 0 ? lo : null} >Convert To Lowercase </button>
-                <button className="btn btn-outline-success mx-2 my-2" onClick={text.length > 0 ? reverseText : null} >Reverse Text</button>
-                <button className="btn btn-outline-info mx-2 my-2" onClick={text.length > 0 ? re : null} >Remove Extra Spaces</button>
-                <button className="btn btn-outline-primary mx-2 my-2" onClick={text.length > 0 ? speak : null} >Speak</button>
-                <button className="btn btn-outline-primary mx-2 my-2" onClick={text.length > 0 ? removeextralines : null} >Remove Empty Lines</button>
+                <button className="btn btn-outline-primary mx-2 my-2" onClick={generateRandomText} >Demo Text</button>
+                <button className="btn btn-outline-success mx-2 my-2" onClick={up} >Convert To Uppercase </button>
+                <button className="btn btn-outline-info mx-2 my-2" onClick={handleAa} >Capitalize</button>
+                <button className="btn btn-outline-primary mx-2 my-2" onClick={lo} >Convert To Lowercase </button>
+                <button className="btn btn-outline-primary mx-2 my-2" onClick={NumberExtractor} >Extract Number</button>
+                <button className="btn btn-outline-success mx-2 my-2" onClick={reverseText} >Reverse Text</button>
+                <button className="btn btn-outline-info mx-2 my-2" onClick={re} >Remove Extra Spaces</button>
+                <button className="btn btn-outline-primary mx-2 my-2" onClick={speak} >Speak</button>
+                <button className="btn btn-outline-primary mx-2 my-2" onClick={removeextralines} >Remove Empty Lines</button>
                 <button className="btn btn-outline-success mx-2 my-2" onClick={text.length > 0 ? removeDuplicateWords : null} >Remove Duplicate Words</button>
                 <button className="btn btn-outline-info mx-2 my-2" onClick={text.length > 0 ? removelines : null} >Remove All Lines</button>
                 <button className="btn btn-outline-primary mx-2 my-2" onClick={text.length > 0 ? removepunctuation : null} >Remove Punctuation</button>

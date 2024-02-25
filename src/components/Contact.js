@@ -16,7 +16,8 @@ export default function ContactUs(props) {
     return (
         <div className="container  my-5">
             <h1 className="my-4" style={TextStyle}>Contact Us</h1>
-            <div style={TextStyle}>
+            <p className="" style={TextStyle}>If You Have Any Suggestions Or Complain About Our Site,Contact Us Now.</p>
+            <div style={TextStyle} className='container '>
                 <p><FontAwesomeIcon icon={faEnvelope} style={iconStyle} /> <strong>Email:</strong> ashish71570@gmail.com</p>
                 <p><FontAwesomeIcon icon={faPhone} style={iconStyle} /> <strong>Phone:</strong> +919983930509</p>
                 <p><FontAwesomeIcon icon={faMapMarkerAlt} style={iconStyle} /> <strong>Address:</strong> India</p>

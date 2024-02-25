@@ -10,7 +10,7 @@ export default function Tools(props) {
             <h1 className={` container text-${props.mode === 'light' ? 'black' : 'white'}`}>Our Tools</h1>
             <p className={` container text-${props.mode === 'light' ? 'black' : 'white'}`}>Our Site Provide Various Tools For Analyze Your Text. Here Is The Full Detail Of The All Tools. </p>
             <div className="row">
-                <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2"  >
+                <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2 "  >
                     <div className="card" style={myStyle} >
                         <div className="card-body">
                             <h5 className="card-title">Generate Random Text</h5>
