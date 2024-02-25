@@ -122,10 +122,14 @@ export default function Form(props) {
         setText(newText)
         props.showalert("Accent Removed", "Success")
     }
+    let myStyle = {
+        color: props.mode === 'dark' ? '#ffffff' : '#042743',
+        // backgroundColor: props.mode === 'dark' ? 'rgb(105,105,105)' : 'white',
+    }
     return (
         <>
             <div className="mb-3">
-                <label htmlFor="textbox" className="form-label my-2 text-primary " style={TextStyle} ><h1>Try Welltext - The Free Text Analyzer Tool</h1></label>
+                <label htmlFor="textbox" className="form-label my-2 text-primary " style={TextStyle} ><h1 style={myStyle}>Try Welltext - The Free Text Analyzer Tool</h1></label>
                 <textarea className={`form-control `} id='textbox' onChange={onchangehandler} value={text} rows="4" placeholder="Enter Some Text" required autoFocus style={props.mode === 'dark' ? textboxstyle : null}></textarea>
                 <div className="container my-4 alert alert-info ">
                     <b>Note : </b> The Remove All Lines Button Joins The All Text Into One Line One Line.It Also Can Be Used For Compressing Html,Css And Javascript.
