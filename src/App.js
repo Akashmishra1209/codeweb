@@ -4,7 +4,6 @@ import About from './components/About';
 import React, { useState } from 'react';
 import Alert from './components/Alert';
 import Form from './components/Form';
-import Blog from './components/Blog';
 import { Routes, Route } from 'react-router-dom';
 import Contact from './components/Contact';
 import NotFoundPage from './components/Notfound';
