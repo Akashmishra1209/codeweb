@@ -13,7 +13,7 @@ export default function Tools(props) {
                 <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2 "  >
                     <div className="card" style={myStyle} >
                         <div className="card-body">
-                            <h5 className="card-title">Generate Random Text</h5>
+                            <h5 className="card-title">Demo Text</h5>
                             <p className="card-text">Generates Random Text To Explore The Tools Quickly.</p>
                         </div>
                     </div>
@@ -38,7 +38,15 @@ export default function Tools(props) {
                     <div className="card" style={myStyle}>
                         <div className="card-body">
                             <h5 className="card-title">Capitalize</h5>
-                            <p className="card-text">Capitalize The Given Text</p>
+                            <p className="card-text">Removes Extra Spaces And Capitalize The Given Text</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2">
+                    <div className="card" style={myStyle}>
+                        <div className="card-body">
+                            <h5 className="card-title">Extract Number</h5>
+                            <p className="card-text">Extract Numbers From The Given Text</p>
                         </div>
                     </div>
                 </div>
