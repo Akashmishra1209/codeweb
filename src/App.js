@@ -43,7 +43,6 @@ function App() {
           <Route path="/about" element={<About mode={mode} togglemode={togglemode} />} />
           <Route path="/contact" element={<Contact mode={mode} togglemode={togglemode} />} />
           <Route path="/tools" element={<Tools mode={mode} togglemode={togglemode} showalert={showalert} />} />
-          <Route path="/post" element={<Blog mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
         </Routes>
 
