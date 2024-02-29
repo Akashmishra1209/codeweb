@@ -53,8 +53,11 @@ const Blog = (props) => {
                         <div className="card-body">
                             <h5 className="card-title  ">{formatDate(blog.createdAt)}</h5>
                             <span><b>{blog.title} : </b></span>
-                            <span className="card-text">{blog.content}</span>
-                        </div>
+                            <span className="card-text">{blog.content}</span><br/>
+                            <div className="badge badge-primary bg-primary rounded-5 h-100 ">
+               { blog.tag}
+                            </div>
+                             </div>
                     </div>
                 </div>
             ))}
