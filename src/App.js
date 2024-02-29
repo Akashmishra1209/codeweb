@@ -18,7 +18,7 @@ function App() {
     })
     setTimeout(() => {
       setalert(null)
-    }, 2000);
+    }, 2500);
   }
   const [mode, setmode] = useState('light')
   const togglemode = () => {
@@ -35,10 +35,13 @@ function App() {
   }
   return (
     <>
-      <Navbar mode={mode} togglemode={togglemode} />
-      <main className='container my-4 ' mode={mode}>
+      <Navbar mode={mode} togglemode={togglemode}  />
+      <main className='container my-4' mode={mode}>
+        <div className="box fixed-top ">
 
-        <Alert alert={alert} />
+          <Alert alert={alert} />
+
+        </div>
         <Routes>
           <Route path="/" element={<Form mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/about" element={<About mode={mode} togglemode={togglemode} />} />
@@ -49,6 +52,7 @@ function App() {
         </Routes>
 
       </main>
+
     </>
   )
 }

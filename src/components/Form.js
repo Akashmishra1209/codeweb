@@ -84,7 +84,7 @@ export default function Form(props) {
         props.showalert("Text Reversed", "Success")
     }
     const generateRandomText = () => {
-        let randomText = "Lorem    Lorem        ipsum      \n \n     Lorem        ipsum                       dolor sit            dolor sit    ipsum                       dolor sit           amet          consectetur         adipisicing        elit. Quis           dolorem           id                distinctio nobis praesentium            et excepturi           voluptates inventore! Obcaecati nemo porro           Lorem        ipsum                       dolor sit    , autem voluptate dolor                expedita. Esse          Lorem        ipsum                       dolor sit            accusamus sequi              eveniet tempora       laboriosam, quod laudantium quasi deleniti repellendus quidem sit quis pariatur!"
+        let randomText = "Lorem \n  Lorem        ipsum      \n \n     Lorem        ipsum         amet          consectetur         adipisicing        elit. Quis           dolorem           id                distinctio nobis praesentium            et excepturi           voluptates inventore! Obcaecati nemo porro           Lorem        ipsum                       dolor sit    , autem voluptate dolor                expedita. Esse          Lorem        ipsum                       dolor sit            accusamus sequi              eveniet tempora       laboriosam, quod laudantium quasi deleniti repellendus quidem sit quis pariatur!"
         setText(randomText);
         props.showalert("Random Text Generated", "Success")
     }
@@ -117,15 +117,17 @@ export default function Form(props) {
         setText(replaced)
         props.showalert("Numbers Extracted", "Success")
     }
+
     return (
         <>
-            <div className="mb-3">
+            <div className="mb-2 ">
                 <label htmlFor="textbox" className="form-label my-2  " style={TextStyle} ><h1>Try Welltext - The Free Text Analyzer Tool</h1></label>
-                <textarea className={`form-control `} id='textbox' onChange={onchangehandler} value={text} rows="4" placeholder="Enter Some Text" required autoFocus style={props.mode === 'dark' ? textboxstyle : null}></textarea>
+                <textarea className={`form-control `} id='textbox' spellCheck="true" onChange={onchangehandler} value={text} rows="4" placeholder="Enter Some Text" required autoFocus style={props.mode === 'dark' ? textboxstyle : null}></textarea>
                 <div className="container my-4 alert alert-info ">
                     <b>Note : </b> The Remove All Lines Button Joins The All Text Into One Line One Line.It Also Can Be Used For Compressing Html,Css And Javascript.
                 </div>
                 <button className="btn btn-outline-primary mx-2 my-2" onClick={generateRandomText} >Demo Text</button>
+                <button className="btn btn-outline-primary mx-2 my-2" >Auto Correct</button>
                 <button className="btn btn-outline-success mx-2 my-2" onClick={up} >Convert To Uppercase </button>
                 <button className="btn btn-outline-info mx-2 my-2" onClick={handleAa} >Capitalize</button>
                 <button className="btn btn-outline-primary mx-2 my-2" onClick={lo} >Convert To Lowercase </button>

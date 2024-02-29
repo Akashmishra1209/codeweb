@@ -42,6 +42,7 @@ const Blog = (props) => {
         return `${day}-${month}-${year}`;
     };
 
+
     return (
         <div>
             <h2 style={TextStyle}>All Updates</h2>
