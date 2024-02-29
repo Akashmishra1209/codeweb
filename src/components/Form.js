@@ -127,7 +127,6 @@ export default function Form(props) {
                     <b>Note : </b> The Remove All Lines Button Joins The All Text Into One Line One Line.It Also Can Be Used For Compressing Html,Css And Javascript.
                 </div>
                 <button className="btn btn-outline-primary mx-2 my-2" onClick={generateRandomText} >Demo Text</button>
-                <button className="btn btn-outline-primary mx-2 my-2" >Auto Correct</button>
                 <button className="btn btn-outline-success mx-2 my-2" onClick={up} >Convert To Uppercase </button>
                 <button className="btn btn-outline-info mx-2 my-2" onClick={handleAa} >Capitalize</button>
                 <button className="btn btn-outline-primary mx-2 my-2" onClick={lo} >Convert To Lowercase </button>
