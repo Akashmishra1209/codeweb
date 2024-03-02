@@ -117,31 +117,41 @@ export default function Form(props) {
         setText(replaced)
         props.showalert("Numbers Extracted", "Success")
     }
-
+    const encode = () => {
+        let newtext = btoa(text);
+        setText(newtext)
+    }
+    const decode = () => {
+        let newtext = atob(text);
+        setText(newtext)
+    }
     return (
         <>
             <div className="mb-2 ">
-                <label htmlFor="textbox" className="form-label my-2  " style={TextStyle} ><h1>Try Welltext - The Free Text Analyzer Tool</h1></label>
+                <label htmlFor="textbox" className="form-label my-2  " style={TextStyle} ><h1>Try Welltext - The Free And Fast Text Analyzer Tool</h1></label>
+                <p className="text-capitalize container  " style={TextStyle}>Welcome to WellText, your go-to text editing tool for all your needs. WellText provides a user-friendly platform to enhance your writing experience. With a lot of tools, WellText empowers you to create polished and error-free content effortlessly.Also,WellText Dosen't Require Any Sign Up Or Money.It Means That Tou Can Enjoy This Site Without Any Problem. Your Suggestions Are Always Welcome.Many More Features Are Comming Soon.</p>
                 <textarea className={`form-control `} id='textbox' spellCheck="true" onChange={onchangehandler} value={text} rows="4" placeholder="Enter Some Text" required autoFocus style={props.mode === 'dark' ? textboxstyle : null}></textarea>
                 <div className="container my-4 alert alert-info ">
                     <b>Note : </b> The Remove All Lines Button Joins The All Text Into One Line One Line.It Also Can Be Used For Compressing Html,Css And Javascript.
                 </div>
-                <button className="btn btn-outline-primary mx-2 my-2" onClick={generateRandomText} >Demo Text</button>
-                <button className="btn btn-outline-success mx-2 my-2" onClick={up} >Convert To Uppercase </button>
-                <button className="btn btn-outline-info mx-2 my-2" onClick={handleAa} >Capitalize</button>
-                <button className="btn btn-outline-primary mx-2 my-2" onClick={lo} >Convert To Lowercase </button>
-                <button className="btn btn-outline-primary mx-2 my-2" onClick={NumberExtractor} >Extract Number</button>
-                <button className="btn btn-outline-success mx-2 my-2" onClick={reverseText} >Reverse Text</button>
-                <button className="btn btn-outline-info mx-2 my-2" onClick={re} >Remove Extra Spaces</button>
-                <button className="btn btn-outline-primary mx-2 my-2" onClick={speak} >Speak</button>
-                <button className="btn btn-outline-primary mx-2 my-2" onClick={removeextralines} >Remove Empty Lines</button>
-                <button className="btn btn-outline-success mx-2 my-2" onClick={text.length > 0 ? removeDuplicateWords : null} >Remove Duplicate Words</button>
-                <button className="btn btn-outline-info mx-2 my-2" onClick={text.length > 0 ? removelines : null} >Remove All Lines</button>
-                <button className="btn btn-outline-primary mx-2 my-2" onClick={text.length > 0 ? removepunctuation : null} >Remove Punctuation</button>
-                <button className="btn btn-outline-success mx-2 my-2" onClick={text.length > 0 ? removeaccent : null} >Remove Accents</button>
-                <button className="btn btn-outline-success  mx-2 my-2" onClick={text.length > 0 ? hd : null} >Copy Text</button>
-                <button className="btn btn-outline-info  mx-2 my-2" onClick={text.length > 0 ? download : null} >Download Text</button>
-                <button className="btn btn-outline-secondary mx-2 my-2" onClick={text.length > 0 ? cl : null} >Clear The Text </button>
+                <button className="btn btn-outline-primary mx-2 my-2 " onClick={generateRandomText} >Demo Text</button>
+                <button className="btn btn-outline-success mx-2 my-2 " onClick={up} >Convert To Uppercase </button>
+                <button className="btn btn-outline-info mx-2 my-2 " onClick={handleAa} >Capitalize</button>
+                <button className="btn btn-outline-primary mx-2 my-2 " onClick={lo} >Convert To Lowercase </button>
+                <button className="btn btn-outline-primary mx-2 my-2 " onClick={NumberExtractor} >Extract Number</button>
+                <button className="btn btn-outline-success mx-2 my-2 " onClick={reverseText} >Reverse Text</button>
+                <button className="btn btn-outline-info mx-2 my-2 " onClick={re} >Remove Extra Spaces</button>
+                <button className="btn btn-outline-primary mx-2 my-2 " onClick={speak} >Speak</button>
+                <button className="btn btn-outline-primary mx-2 my-2 " onClick={removeextralines} >Remove Empty Lines</button>
+                <button className="btn btn-outline-primary mx-2 my-2 " onClick={encode} >Encode To Base64</button>
+                <button className="btn btn-outline-primary mx-2 my-2 " onClick={decode} >Decode To Base64</button>
+                <button className="btn btn-outline-success mx-2 my-2 " onClick={text.length > 0 ? removeDuplicateWords : null} >Remove Duplicate Words</button>
+                <button className="btn btn-outline-info mx-2 my-2 " onClick={text.length > 0 ? removelines : null} >Remove All Lines</button>
+                <button className="btn btn-outline-primary mx-2 my-2 " onClick={text.length > 0 ? removepunctuation : null} >Remove Punctuation</button>
+                <button className="btn btn-outline-success mx-2 my-2 " onClick={text.length > 0 ? removeaccent : null} >Remove Accents</button>
+                <button className="btn btn-outline-success  mx-2 my-2 " onClick={text.length > 0 ? hd : null} >Copy Text</button>
+                <button className="btn btn-outline-info  mx-2 my-2 " onClick={text.length > 0 ? download : null} >Download Text</button>
+                <button className="btn btn-outline-secondary mx-2 my-2 " onClick={text.length > 0 ? cl : null} >Clear The Text </button>
             </div >
             <div className="container">
                 <hr />

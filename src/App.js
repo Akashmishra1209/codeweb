@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Alert from './components/Alert';
 import Form from './components/Form';
 import Blog from './components/Blog';
@@ -32,10 +32,11 @@ function App() {
       document.body.style.backgroundColor = 'white';
       showalert("Light Mode Enabled", "Success")
     }
+
   }
   return (
     <>
-      <Navbar mode={mode} togglemode={togglemode}  />
+      <Navbar mode={mode} togglemode={togglemode} />
       <main className='container my-4' mode={mode}>
         <div className="box fixed-top ">
 
