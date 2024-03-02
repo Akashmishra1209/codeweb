@@ -77,6 +77,22 @@ export default function Tools(props) {
                 <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2">
                     <div className="card" style={myStyle}>
                         <div className="card-body">
+                            <h5 className="card-title">Encode To Base64</h5>
+                            <p className="card-text">This Tool Encodes Given Text  To Base64 </p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2">
+                    <div className="card" style={myStyle}>
+                        <div className="card-body">
+                            <h5 className="card-title">Decode To Base64</h5>
+                            <p className="card-text">This Tool Decode Given Text  To Base64 </p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2">
+                    <div className="card" style={myStyle}>
+                        <div className="card-body">
                             <h5 className="card-title">Remove Empty Lines</h5>
                             <p className="card-text">This Tool Remove Extra Lines From Text</p>
                         </div>
