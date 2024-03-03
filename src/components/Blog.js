@@ -46,21 +46,21 @@ const Blog = (props) => {
     return (
         <div>
             <h2 style={TextStyle}>All Updates</h2>
-            {Blogs.map(blog => (
-                        blog && 
+            {Blogs ? Blogs.map(blog => (
                 <div key={blog.id} className="col-md-4 mb-3 w-100 ">
                     <div className="card" style={myStyle}>
                         <div className="card-body">
                             <h5 className="card-title  ">{formatDate(blog.createdAt)}</h5>
                             <span><b>{blog.title} : </b></span>
-                            <span className="card-text">{blog.content}</span><br/>
+                            <span className="card-text">{blog.content}</span><br />
                             <div className="badge badge-primary bg-primary rounded-5 h-100 ">
-               { blog.tag}
+                                {blog.tag}
                             </div>
-                             </div>
+                        </div>
                     </div>
                 </div>
-            ))}
+            ))
+                : "Loading"}
         </div>
     );
 };

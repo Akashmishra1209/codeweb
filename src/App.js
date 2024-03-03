@@ -37,7 +37,7 @@ function App() {
   return (
     <>
       <Navbar mode={mode} togglemode={togglemode} />
-      <main className='container my-4' mode={mode}>
+      <main className='container mt-4' mode={mode}>
         <div className="box fixed-top ">
 
           <Alert alert={alert} />
@@ -49,6 +49,7 @@ function App() {
           <Route path="/contact" element={<Contact mode={mode} togglemode={togglemode} />} />
           <Route path="/tools" element={<Tools mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/updates" element={<Blog mode={mode} togglemode={togglemode} showalert={showalert} />} />
+
           <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
         </Routes>
 

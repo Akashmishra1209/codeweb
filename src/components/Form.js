@@ -156,19 +156,17 @@ export default function Form(props) {
 
                 <p className="text-capitalize container  " style={TextStyle}>
                     Welcome to WellText, your go-to text editing tool for all your needs. WellText provides a user-friendly platform to enhance your writing experience. With a lot of tools, WellText empowers you to create polished and error-free content effortlessly.Also,WellText Dosen't Require Any Sign Up Or Money.It Means That Tou Can Enjoy This Site Without Any Problem. Your Suggestions Are Always Welcome.Many More Features Are Comming Soon.
-                    </p>
+                </p>
                 <textarea className={`form-control `} id='textbox' spellCheck="true" onChange={onchangehandler} value={text} rows="4" placeholder="Enter Some Text" required autoFocus style={props.mode === 'dark' ? textboxstyle : null}></textarea>
-                
+
                 <div className="container my-4 alert alert-info ">
                     <b>Note : </b> The Remove All Lines Button Joins The All Text Into One Line One Line.It Also Can Be Used For Compressing Html,Css And Javascript.
                 </div>
 
                 <button className="btn btn-outline-primary mx-2 my-2 " onClick={generateRandomText} >Demo Text</button>
                 <button className="btn btn-outline-success mx-2 my-2 " onClick={up} >Convert To Uppercase </button>
-                <button className="btn btn-outline-success mx-2 my-2 " onClick={handleUndo} disabled={undoStack.length <= 1}>Undo </button>
-                <button className="btn btn-outline-success mx-2 my-2 " onClick={handleRedo} disabled={undoStack.length <= 1}>Redo</button>
-                <button className="btn btn-outline-success mx-2 my-2 " >Undo </button>
-                <button className="btn btn-outline-success mx-2 my-2 " >Redo</button>
+                <button className="btn btn-outline-success mx-2 my-2 " onClick={handleUndo} >Undo </button>
+                <button className="btn btn-outline-success mx-2 my-2 " onClick={handleRedo}>Redo</button>
                 <button className="btn btn-outline-info mx-2 my-2 " onClick={handleAa} >Capitalize</button>
                 <button className="btn btn-outline-primary mx-2 my-2 " onClick={lo} >Convert To Lowercase </button>
                 <button className="btn btn-outline-primary mx-2 my-2 " onClick={NumberExtractor} >Extract Number</button>
