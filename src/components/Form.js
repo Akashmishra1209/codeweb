@@ -5,14 +5,13 @@ import '../../src/App.css';
 export default function Form(props) {
     const [text, setText] = useState("")
     const [history, setHistory] = useState([]);
+    const [undoStack, setUndoStack] = useState([]);
+    const [redoStack, setRedoStack] = useState([]);
+
     const onchangehandler = (event) => {
         let newtext = event.target.value;
         setText(newtext);
-        setHistory([...history.slice(0, -1), newtext]);
-    }
-    let TextStyle = {
-        color: props.mode === 'dark' ? '#ffffff' : '#042743',
-        // backgroundColor: props.mode === 'dark' ? 'rgb(105,105,105)' : 'white',
+        setUndoStack([...undoStack, newtext]);
     }
 
     const up = () => {
@@ -120,22 +119,56 @@ export default function Form(props) {
     const encode = () => {
         let newtext = btoa(text);
         setText(newtext)
+        props.showalert("Encoded To Base64", "Success")
     }
     const decode = () => {
         let newtext = atob(text);
         setText(newtext)
+        props.showalert("Decoded To Base64", "Success")
     }
+    let TextStyle = {
+        color: props.mode === 'dark' ? '#ffffff' : '#042743',
+        // backgroundColor: props.mode === 'dark' ? 'rgb(105,105,105)' : 'white',
+    }
+    const handleUndo = () => {
+        if (undoStack.length > 1) {
+            const currentText = undoStack.pop();
+            setRedoStack([...redoStack, currentText]);
+            setText(undoStack[undoStack.length - 1]);
+            setUndoStack([...undoStack]);
+        }
+        props.showalert("Action Undo", "Success")
+    };
+
+    const handleRedo = () => {
+        if (redoStack.length > 0) {
+            const nextText = redoStack.pop();
+            setUndoStack([...undoStack, text]);
+            setText(nextText);
+            setRedoStack([...redoStack]);
+        }
+        props.showalert("Action Redo", "Success")
+    };
     return (
         <>
             <div className="mb-2 ">
                 <label htmlFor="textbox" className="form-label my-2  " style={TextStyle} ><h1>Try Welltext - The Free And Fast Text Analyzer Tool</h1></label>
-                <p className="text-capitalize container  " style={TextStyle}>Welcome to WellText, your go-to text editing tool for all your needs. WellText provides a user-friendly platform to enhance your writing experience. With a lot of tools, WellText empowers you to create polished and error-free content effortlessly.Also,WellText Dosen't Require Any Sign Up Or Money.It Means That Tou Can Enjoy This Site Without Any Problem. Your Suggestions Are Always Welcome.Many More Features Are Comming Soon.</p>
+
+                <p className="text-capitalize container  " style={TextStyle}>
+                    Welcome to WellText, your go-to text editing tool for all your needs. WellText provides a user-friendly platform to enhance your writing experience. With a lot of tools, WellText empowers you to create polished and error-free content effortlessly.Also,WellText Dosen't Require Any Sign Up Or Money.It Means That Tou Can Enjoy This Site Without Any Problem. Your Suggestions Are Always Welcome.Many More Features Are Comming Soon.
+                    </p>
                 <textarea className={`form-control `} id='textbox' spellCheck="true" onChange={onchangehandler} value={text} rows="4" placeholder="Enter Some Text" required autoFocus style={props.mode === 'dark' ? textboxstyle : null}></textarea>
+                
                 <div className="container my-4 alert alert-info ">
                     <b>Note : </b> The Remove All Lines Button Joins The All Text Into One Line One Line.It Also Can Be Used For Compressing Html,Css And Javascript.
                 </div>
+
                 <button className="btn btn-outline-primary mx-2 my-2 " onClick={generateRandomText} >Demo Text</button>
                 <button className="btn btn-outline-success mx-2 my-2 " onClick={up} >Convert To Uppercase </button>
+                <button className="btn btn-outline-success mx-2 my-2 " onClick={handleUndo} disabled={undoStack.length <= 1}>Undo </button>
+                <button className="btn btn-outline-success mx-2 my-2 " onClick={handleRedo} disabled={undoStack.length <= 1}>Redo</button>
+                <button className="btn btn-outline-success mx-2 my-2 " >Undo </button>
+                <button className="btn btn-outline-success mx-2 my-2 " >Redo</button>
                 <button className="btn btn-outline-info mx-2 my-2 " onClick={handleAa} >Capitalize</button>
                 <button className="btn btn-outline-primary mx-2 my-2 " onClick={lo} >Convert To Lowercase </button>
                 <button className="btn btn-outline-primary mx-2 my-2 " onClick={NumberExtractor} >Extract Number</button>

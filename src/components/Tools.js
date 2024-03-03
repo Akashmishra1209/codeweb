@@ -5,6 +5,7 @@ export default function Tools(props) {
         color: props.mode === 'dark' ? '#ffffff' : '#042743',
         backgroundColor: props.mode === 'dark' ? 'rgb(105,105,105)' : 'white',
     }
+
     return (
         <>
             <h1 className={` container text-${props.mode === 'light' ? 'black' : 'white'}`}>Our Tools</h1>
@@ -35,6 +36,22 @@ export default function Tools(props) {
                     </div>
                 </div>
                 <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2">
+                    <div className="card" style={myStyle}>
+                        <div className="card-body">
+                            <h5 className="card-title">Undo</h5>
+                            <p className="card-text">Undo Previous Action</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2">
+                    <div className="card" style={myStyle}>
+                        <div className="card-body">
+                            <h5 className="card-title">Redo</h5>
+                            <p className="card-text">Redo Previous Action</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-sm-6 mb-3 mb-smdf-0 mt-xl-2">
                     <div className="card" style={myStyle}>
                         <div className="card-body">
                             <h5 className="card-title">Capitalize</h5>
