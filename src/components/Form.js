@@ -149,13 +149,48 @@ export default function Form(props) {
         }
         props.showalert("Action Redo", "Success")
     };
+    const removeEmoji = () => {
+
+        let newtext = text.replace(/[\u{1F300}-\u{1F5FF}\u{1F600}-\u{1F64F}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{FE00}-\u{FE0F}\u{1F9B0}-\u{1F9B3}\u{1F9B5}\u{1F9B6}\u{1F9B8}\u{1F9B9}\u{1F9BB}-\u{1F9C0}\u{1F9C1}]/gu, '')
+        setText(newtext)
+        props.showalert("Emoji Removed", "Success")
+
+    }
+    const findAndReplace = () => {
+        // Define the word to be replaced and the word to replace it with
+        let wordToReplace = prompt("Enter The String To Find");
+        let replacementWord = prompt("Enter The String To Replace");
+
+        // Create a regular expression to match the word globally
+        let regex = new RegExp("\\b" + wordToReplace + "\\b", "gi");
+
+        // Replace the word with the replacement word
+        let newText = text.replace(regex, replacementWord);
+
+        // Output the result
+        setText(newText);
+        props.showalert("Text Replaced ", "Success")
+
+    }
+    const Paste = async () => {
+        // const urlRegex = /(https?:\/\/[^\s]+)/g;
+        // let newtext= text.match(urlRegex) || [];
+        // console.log(newtext)
+        let pasteText = await navigator.clipboard.readText()
+        setText(pasteText)
+        props.showalert("Text Pasted", "Success")
+    };
+    const checkIndex = () => {
+        let x = prompt("Enter the text");
+        alert(text.indexOf(x));
+    }
     return (
         <>
-            <div className="mb-2 ">
-                <label htmlFor="textbox" className="form-label my-2  " style={TextStyle} ><h1>Try Welltext - The Free And Fast Text Analyzer Tool</h1></label>
 
+            <div className="mb-2 ">
+                <label htmlFor="textbox" className="form-label my-2  " style={TextStyle} ><h1>Try Welltext - The Free And Fast Text Analyzer Tool </h1></label>
                 <p className="text-capitalize container  " style={TextStyle}>
-                    Welcome to WellText, your go-to text editing tool for all your needs. WellText provides a user-friendly platform to enhance your writing experience. With a lot of tools, WellText empowers you to create polished and error-free content effortlessly.Also,WellText Dosen't Require Any Sign Up Or Money.It Means That Tou Can Enjoy This Site Without Any Problem. Your Suggestions Are Always Welcome.Many More Features Are Comming Soon.
+                    Welcome to WellText, your go-to text editing tool for all your needs. WellText provides a user-friendly platform to enhance your writing experience. With a lot of tools, WellText empowers you to create polished and error-free content effortlessly.Also,WellText Dosen't Require Any Sign Up Or Money.It Means That You Can Enjoy This Site Without Any Problem. Your Suggestions Are Always Welcome.Many More Features Are Comming Soon.
                 </p>
                 <textarea className={`form-control `} id='textbox' spellCheck="true" onChange={onchangehandler} value={text} rows="4" placeholder="Enter Some Text" required autoFocus style={props.mode === 'dark' ? textboxstyle : null}></textarea>
 
@@ -170,9 +205,13 @@ export default function Form(props) {
                 <button className="btn btn-outline-info mx-2 my-2 " onClick={handleAa} >Capitalize</button>
                 <button className="btn btn-outline-primary mx-2 my-2 " onClick={lo} >Convert To Lowercase </button>
                 <button className="btn btn-outline-primary mx-2 my-2 " onClick={NumberExtractor} >Extract Number</button>
+                <button className="btn btn-outline-primary mx-2 my-2 " onClick={checkIndex} >Find Index</button>
+                <button className="btn btn-outline-primary mx-2 my-2 " onClick={speak} >Speak</button>
+                <button className="btn btn-outline-primary mx-2 my-2 " onClick={Paste} >Paste From Clipboard</button>
+                <button className="btn btn-outline-primary mx-2 my-2 " onClick={findAndReplace} >Find And Replace</button>
                 <button className="btn btn-outline-success mx-2 my-2 " onClick={reverseText} >Reverse Text</button>
                 <button className="btn btn-outline-info mx-2 my-2 " onClick={re} >Remove Extra Spaces</button>
-                <button className="btn btn-outline-primary mx-2 my-2 " onClick={speak} >Speak</button>
+                <button className="btn btn-outline-info mx-2 my-2 " onClick={removeEmoji} >Remove Emoji</button>
                 <button className="btn btn-outline-primary mx-2 my-2 " onClick={removeextralines} >Remove Empty Lines</button>
                 <button className="btn btn-outline-primary mx-2 my-2 " onClick={encode} >Encode To Base64</button>
                 <button className="btn btn-outline-primary mx-2 my-2 " onClick={decode} >Decode To Base64</button>

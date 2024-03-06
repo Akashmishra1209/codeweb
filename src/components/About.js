@@ -29,27 +29,6 @@ export default function About(props) {
                     <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div className="accordion-body text-capitalize " style={myStyle}>
                             WellText Gives You a way to analyze your text quickly and efficiently. Be it word count, character count,Remove Extra Space,Reverse Text,Speak Text,Convert To LowerCase,Convert To Uppercase,Capitalize,Random Text Generator,Accent Remover,Extra Lines Remover And Many More.
-                            <h4>Our Main Features</h4>
-                            <ul>
-                                <li>Demo Text</li>
-                                <li>Convert To Uppercase</li>
-                                <li>Convert To Lowercase</li>
-                                <li>Capitalize</li>
-                                <li>Remove Extra Spaces</li>
-                                <li>Remove Empty Lines</li>
-                                <li>Remove All Lines</li>
-                                <li>Extract Number</li>
-                                <li>Reverse Text</li>
-                                <li>Encode To Base64</li>
-                                <li>Decode To Base64</li>
-                                <li>Remove Duplicate Words</li>
-                                <li>Remove Punctuation</li>
-                                <li>Remove Accents</li>
-                                <li>Word Counter</li>
-                                <li>Character Counter</li>
-                                <li>Lines Counter</li>
-                                <li>Reading Time Counter</li>
-                            </ul>
                         </div>
                     </div>
                 </div>

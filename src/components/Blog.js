@@ -46,7 +46,7 @@ const Blog = (props) => {
     return (
         <div>
             <h2 style={TextStyle}>All Updates</h2>
-            {Blogs ? Blogs.map(blog => (
+            { Blogs.map(blog => (
                 <div key={blog.id} className="col-md-4 mb-3 w-100 ">
                     <div className="card" style={myStyle}>
                         <div className="card-body">
@@ -60,12 +60,13 @@ const Blog = (props) => {
                     </div>
                 </div>
             ))
-                : "Loading"}
+            }
         </div>
     );
 };
 
 export default Blog;
+
 // import React, { useState, useEffect } from 'react';
 // import { Client, Databases, ID } from 'appwrite';
 
