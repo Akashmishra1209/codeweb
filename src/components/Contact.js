@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone, faMapMarkerAlt, fa } from '@fortawesome/free-solid-svg-icons';
 import { FaGithub } from "react-icons/fa";
 
 export default function ContactUs(props) {

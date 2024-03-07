@@ -167,8 +167,7 @@ export default function Form(props) {
         // Replace the word with the replacement word
         let newText = text.replace(regex, replacementWord);
 
-        // Output the result
-        setText(newText);
+        // Output the newtext        setText(newText);
         props.showalert("Text Replaced ", "Success")
 
     }
@@ -182,7 +181,15 @@ export default function Form(props) {
     };
     const checkIndex = () => {
         let x = prompt("Enter the text");
-        alert(text.indexOf(x));
+        alert("The Text Is At " + text.indexOf(x));
+    }
+    const removeNumber = () => {
+        const regex = /([0-9])\w+/g;
+
+        // Replace all numbers with an empty string
+        const newtext= text.replace(regex, '');
+       setText(newtext);
+       props.showalert("Numbers Removed","Success");
     }
     return (
         <>
@@ -197,31 +204,31 @@ export default function Form(props) {
                 <div className="container my-4 alert alert-info ">
                     <b>Note : </b> The Remove All Lines Button Joins The All Text Into One Line One Line.It Also Can Be Used For Compressing Html,Css And Javascript.
                 </div>
-
-                <button className="btn btn-outline-primary mx-2 my-2 " onClick={generateRandomText} >Demo Text</button>
-                <button className="btn btn-outline-success mx-2 my-2 " onClick={up} >Convert To Uppercase </button>
-                <button className="btn btn-outline-success mx-2 my-2 " onClick={handleUndo} >Undo </button>
-                <button className="btn btn-outline-success mx-2 my-2 " onClick={handleRedo}>Redo</button>
-                <button className="btn btn-outline-info mx-2 my-2 " onClick={handleAa} >Capitalize</button>
-                <button className="btn btn-outline-primary mx-2 my-2 " onClick={lo} >Convert To Lowercase </button>
-                <button className="btn btn-outline-primary mx-2 my-2 " onClick={NumberExtractor} >Extract Number</button>
-                <button className="btn btn-outline-primary mx-2 my-2 " onClick={checkIndex} >Find Index</button>
-                <button className="btn btn-outline-primary mx-2 my-2 " onClick={speak} >Speak</button>
-                <button className="btn btn-outline-primary mx-2 my-2 " onClick={Paste} >Paste From Clipboard</button>
-                <button className="btn btn-outline-primary mx-2 my-2 " onClick={findAndReplace} >Find And Replace</button>
-                <button className="btn btn-outline-success mx-2 my-2 " onClick={reverseText} >Reverse Text</button>
-                <button className="btn btn-outline-info mx-2 my-2 " onClick={re} >Remove Extra Spaces</button>
-                <button className="btn btn-outline-info mx-2 my-2 " onClick={removeEmoji} >Remove Emoji</button>
-                <button className="btn btn-outline-primary mx-2 my-2 " onClick={removeextralines} >Remove Empty Lines</button>
-                <button className="btn btn-outline-primary mx-2 my-2 " onClick={encode} >Encode To Base64</button>
-                <button className="btn btn-outline-primary mx-2 my-2 " onClick={decode} >Decode To Base64</button>
-                <button className="btn btn-outline-success mx-2 my-2 " onClick={text.length > 0 ? removeDuplicateWords : null} >Remove Duplicate Words</button>
-                <button className="btn btn-outline-info mx-2 my-2 " onClick={text.length > 0 ? removelines : null} >Remove All Lines</button>
-                <button className="btn btn-outline-primary mx-2 my-2 " onClick={text.length > 0 ? removepunctuation : null} >Remove Punctuation</button>
-                <button className="btn btn-outline-success mx-2 my-2 " onClick={text.length > 0 ? removeaccent : null} >Remove Accents</button>
-                <button className="btn btn-outline-success  mx-2 my-2 " onClick={text.length > 0 ? hd : null} >Copy Text</button>
-                <button className="btn btn-outline-info  mx-2 my-2 " onClick={text.length > 0 ? download : null} >Download Text</button>
-                <button className="btn btn-outline-secondary mx-2 my-2 " onClick={text.length > 0 ? cl : null} >Clear The Text </button>
+                <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={generateRandomText} >Demo Text</button>
+                <button className={`btn btn-outline-success mx-2 my-2`} onClick={up} >Convert To Uppercase </button>
+                <button className={`btn btn-outline-success mx-2 my-2`} onClick={handleUndo} >Undo </button>
+                <button className={`btn btn-outline-success mx-2 my-2`} onClick={handleRedo}>Redo</button>
+                <button className={`btn btn-outline-info mx-2 my-2 " `} onClick={handleAa} >Capitalize</button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={lo} >Convert To Lowercase </button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={NumberExtractor} >Extract Number</button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={checkIndex} >Find Index</button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={speak} >Speak</button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={Paste} >Paste From Clipboard</button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={findAndReplace} >Find And Replace</button>
+                <button className={`btn btn-outline-success mx-2 my-2`} onClick={reverseText} >Reverse Text</button>
+                <button className={`btn btn-outline-info mx-2 my-2 " `} onClick={re} >Remove Extra Spaces</button>
+                <button className={`btn btn-outline-info mx-2 my-2 " `} onClick={removeEmoji} >Remove Emoji</button>
+                <button className={`btn btn-outline-info mx-2 my-2 " `} onClick={removeNumber} >Remove Numbers</button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={removeextralines} >Remove Empty Lines</button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={encode} >Encode To Base64</button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={decode} >Decode To Base64</button>
+                <button className={`btn btn-outline-success mx-2 my-2`} onClick={text.length > 0 ? removeDuplicateWords : null} >Remove Duplicate Words</button>
+                <button className={`btn btn-outline-info mx-2 my-2 " `} onClick={text.length > 0 ? removelines : null} >Remove All Lines</button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={text.length > 0 ? removepunctuation : null} >Remove Punctuation</button>
+                <button className={`btn btn-outline-success mx-2 my-2`} onClick={text.length > 0 ? removeaccent : null} >Remove Accents</button>
+                <button className={`btn btn-outline-success  mx-2 my-2`} onClick={text.length > 0 ? hd : null} >Copy Text</button>
+                <button className={`btn btn-outline-info  mx-2 my-2 "`} onClick={text.length > 0 ? download : null} >Download Text</button>
+                <button className={`btn btn-outline-secondary mx-2 my-2`} onClick={text.length > 0 ? cl : null} >Clear The Text </button>
             </div >
             <div className="container">
                 <hr />
@@ -230,10 +237,10 @@ export default function Form(props) {
                 <p className='active' style={TextStyle}>
                     The Text Contains <span>{text.length > 0 ? text.split(/\r\n|\r|\n/).length : text.split(/\r\n|\r|\n/).length = 0} Lines</span><span className='fw-bold '> {text.split(/\s+/).filter((word) => {
                         return word.length !== 0
-                    }).length} Words</span> And <span className='fw-bold '>{text.length} Characters</span>. </p>
+                    }).length} Words</span> And <span className='fw-bold '>{text.length} Characters </span> With Spaces And <span className='fw-bold '>{text.trim().length} Character</span> Without Spaces. </p>
                 <p style={TextStyle}>You Can Read It In <b> {text.split(/[ ]+/).filter((word) => {
                     return word.length !== 0
-                }).length * 0.008} Minuts</b> </p>
+                }).length * 0.008} Minuts</b></p>
                 <hr />
                 {/* <h2 className='active'>Preview</h2>
                 <p>{text.length > 0 ? text : "Enter Something In The Text Box To Preview It Here"}</p> */}
