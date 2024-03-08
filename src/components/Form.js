@@ -188,6 +188,11 @@ export default function Form(props) {
         setText(newtext);
         props.showalert("Numbers Removed", "Success");
     }
+    const removeHtml = () => {
+        const newtext = text.replace(/<\s*[^>]*>/gi, '')
+        setText(newtext);
+        props.showalert("Html Removed", "Success");
+    }
     const extractLink = () => {
         const link = text.match(
             /(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/gim
@@ -210,7 +215,7 @@ export default function Form(props) {
                 <textarea className={`form-control `} id='textbox' spellCheck="true" onChange={onchangehandler} value={text} rows="4" placeholder="Enter Some Text" required autoFocus style={props.mode === 'dark' ? textboxstyle : null}></textarea>
 
                 <div className="container my-4 alert alert-info ">
-                    <b>Note : </b> The Remove All Lines Button Joins The All Text Into One Line One Line.It Also Can Be Used For Compressing Html,Css And Javascript.
+                    <b>Note : </b> The Remove All Lines Button Joins The All Text Into  One Line.It Also Can Be Used For Compressing Html,Css And Javascript.
                 </div>
                 <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={generateRandomText} >Demo Text</button>
                 <button className={`btn btn-outline-success mx-2 my-2`} onClick={up} >Convert To Uppercase </button>
@@ -220,6 +225,7 @@ export default function Form(props) {
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={lo} >Convert To Lowercase </button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={NumberExtractor} >Extract Number</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={extractLink} >Extract Links</button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={removeHtml} >Remove Html</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={checkIndex} >Find Index</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={speak} >Speak</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={Paste} >Paste From Clipboard</button>

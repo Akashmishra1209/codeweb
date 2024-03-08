@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Client, Databases, ID } from 'appwrite';
+import $ from "jquery"
 
 const Blog = (props) => {
     const [Blogs, setBlogs] = useState([]);
@@ -41,6 +42,9 @@ const Blog = (props) => {
         const year = date.getFullYear();
         return `${day}-${month}-${year}`;
     };
+    const readMore=()=>{
+        $("")
+    }
 
 
     return (
