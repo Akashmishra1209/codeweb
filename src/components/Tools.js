@@ -94,6 +94,14 @@ export default function Tools(props) {
                 <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2">
                     <div className="card" style={myStyle}>
                         <div className="card-body">
+                            <h5 className="card-title">Extract Links</h5>
+                            <p className="card-text">Extract All Links  From The Given Text And Sepreate Them In New Line</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2">
+                    <div className="card" style={myStyle}>
+                        <div className="card-body">
                             <h5 className="card-title">Reverse Text</h5>
                             <p className="card-text">Reverse The Given Text</p>
                         </div>

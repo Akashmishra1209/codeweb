@@ -46,7 +46,7 @@ const Blog = (props) => {
     return (
         <div>
             <h2 style={TextStyle}>All Updates</h2>
-            { Blogs.map(blog => (
+            {Blogs.length == 0 ? <p style={TextStyle}>No Updates Found</p> : Blogs.map(blog => (
                 <div key={blog.id} className="col-md-4 mb-3 w-100 ">
                     <div className="card" style={myStyle}>
                         <div className="card-body">

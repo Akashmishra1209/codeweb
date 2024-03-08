@@ -181,15 +181,23 @@ export default function Form(props) {
     };
     const checkIndex = () => {
         let x = prompt("Enter the text");
-        alert("The Text Is At " + text.indexOf(x));
+        x.value <= 0 ? alert("The Number Dose Not Exists") : alert("The Text Is At " + text.indexOf(x))
     }
     const removeNumber = () => {
-        const regex = /([0-9])\w+/g;
-
-        // Replace all numbers with an empty string
-        const newtext= text.replace(regex, '');
-       setText(newtext);
-       props.showalert("Numbers Removed","Success");
+        const newtext = text.replace(/([0-9])\w+/g, '');
+        setText(newtext);
+        props.showalert("Numbers Removed", "Success");
+    }
+    const extractLink = () => {
+        const link = text.match(
+            /(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/gim
+        );
+        if (link == null) {
+            setText("")
+        } else {
+            let newtext = link.join("\n")
+            setText(newtext)
+        }
     }
     return (
         <>
@@ -211,6 +219,7 @@ export default function Form(props) {
                 <button className={`btn btn-outline-info mx-2 my-2 " `} onClick={handleAa} >Capitalize</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={lo} >Convert To Lowercase </button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={NumberExtractor} >Extract Number</button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={extractLink} >Extract Links</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={checkIndex} >Find Index</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={speak} >Speak</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={Paste} >Paste From Clipboard</button>

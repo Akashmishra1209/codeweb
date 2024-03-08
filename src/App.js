@@ -9,6 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 import Contact from './components/Contact';
 import NotFoundPage from './components/Notfound';
 import Tools from './components/Tools';
+import Login from './components/Login';
 function App() {
   const [alert, setalert] = useState(null);
   const showalert = (message, type) => {
@@ -49,6 +50,7 @@ function App() {
           <Route path="/contact" element={<Contact mode={mode} togglemode={togglemode} />} />
           <Route path="/tools" element={<Tools mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/updates" element={<Blog mode={mode} togglemode={togglemode} showalert={showalert} />} />
+          {/* <Route path="/login" element={<Login mode={mode} togglemode={togglemode} showalert={showalert} />} /> */}
 
           <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
         </Routes>
