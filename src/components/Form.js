@@ -149,6 +149,7 @@ export default function Form(props) {
         }
         props.showalert("Action Redo", "Success")
     };
+
     const removeEmoji = () => {
 
         let newtext = text.replace(/[\u{1F300}-\u{1F5FF}\u{1F600}-\u{1F64F}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{FE00}-\u{FE0F}\u{1F9B0}-\u{1F9B3}\u{1F9B5}\u{1F9B6}\u{1F9B8}\u{1F9B9}\u{1F9BB}-\u{1F9C0}\u{1F9C1}]/gu, '')
@@ -208,7 +209,7 @@ export default function Form(props) {
         <>
 
             <div className="mb-2 ">
-                <label htmlFor="textbox" className="form-label my-2  " style={TextStyle} ><h1>Try Welltext - The Free And Fast Text Analyzer Tool </h1></label>
+                <label htmlFor="textbox" className="form-label my-2" style={TextStyle} ><h1>Try Welltext - The Free And Fast Text Analyzer And Text Manipulation Tool </h1></label>
                 <p className="text-capitalize container  " style={TextStyle}>
                     Welcome to WellText, your go-to text editing tool for all your needs. WellText provides a user-friendly platform to enhance your writing experience. With a lot of tools, WellText empowers you to create polished and error-free content effortlessly.Also,WellText Dosen't Require Any Sign Up Or Money.It Means That You Can Enjoy This Site Without Any Problem. Your Suggestions Are Always Welcome.Many More Features Are Comming Soon.
                 </p>
