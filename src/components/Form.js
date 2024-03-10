@@ -205,6 +205,23 @@ export default function Form(props) {
             setText(newtext)
         }
     }
+    function countVowels(str) {
+        const vowels = 'aeiouAEIOU';
+        let count = 0;
+        for (let char of str) {
+            if (vowels.includes(char)) {
+                count++;
+            }
+        }
+        return count;
+    }
+    const  formatNumberWithCommas=()=> {
+        let newtext = text.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        setText(newtext)
+        props.showalert("Number Formated","Success")
+    }
+    
+    
     return (
         <>
 
@@ -228,6 +245,7 @@ export default function Form(props) {
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={extractLink} >Extract Links</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={removeHtml} >Remove Html</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={checkIndex} >Find Index</button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={formatNumberWithCommas} >Formate Numbers</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={speak} >Speak</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={Paste} >Paste From Clipboard</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={findAndReplace} >Find And Replace</button>

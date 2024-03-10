@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
+import Policy from './components/Policy';
 import React, { useState, useEffect } from 'react';
 import Alert from './components/Alert';
 import Form from './components/Form';
@@ -44,15 +45,14 @@ function App() {
           <Alert alert={alert} />
 
         </div>
-        <Routes>
-          <Route path="/" element={<Form mode={mode} togglemode={togglemode} showalert={showalert} />} />
+        <Routes> <Route path="/" element={<Form mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/about" element={<About mode={mode} togglemode={togglemode} />} />
           <Route path="/contact" element={<Contact mode={mode} togglemode={togglemode} />} />
           <Route path="/tools" element={<Tools mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/updates" element={<Blog mode={mode} togglemode={togglemode} showalert={showalert} />} />
-          {/* <Route path="/login" element={<Login mode={mode} togglemode={togglemode} showalert={showalert} />} /> */}
+          <Route path="/login" element={<Login mode={mode} togglemode={togglemode} showalert={showalert} />} />
 
-          <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
+          {/* {/* <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} /> */}
         </Routes>
 
       </main>
