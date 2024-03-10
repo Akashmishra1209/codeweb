@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Welltext - The Free And Fast Text Analyzer And Text Manipulation Tool",
+  "name": "WellText Is A Fast And Quick Text Analyzer Tool.It Has Many Features For Analyze Your Text Such As Convert To Uppercase,Convert To Lowercase,Capitalize Text,Speak Text And Many More.",
   "icons": [
     {
       "src": "favicon.ico",
