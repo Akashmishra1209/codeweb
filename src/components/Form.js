@@ -158,17 +158,12 @@ export default function Form(props) {
 
     }
     const findAndReplace = () => {
-        // Define the word to be replaced and the word to replace it with
         let wordToReplace = prompt("Enter The String To Find");
         let replacementWord = prompt("Enter The String To Replace");
-
-        // Create a regular expression to match the word globally
         let regex = new RegExp("\\b" + wordToReplace + "\\b", "gi");
-
-        // Replace the word with the replacement word
         let newText = text.replace(regex, replacementWord);
-
-        // Output the newtext        setText(newText);
+        // Output the newtext       
+        setText(newText);
         props.showalert("Text Replaced ", "Success")
 
     }
@@ -205,23 +200,13 @@ export default function Form(props) {
             setText(newtext)
         }
     }
-    function countVowels(str) {
-        const vowels = 'aeiouAEIOU';
-        let count = 0;
-        for (let char of str) {
-            if (vowels.includes(char)) {
-                count++;
-            }
-        }
-        return count;
-    }
-    const  formatNumberWithCommas=()=> {
+    const formatNumberWithCommas = () => {
         let newtext = text.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         setText(newtext)
-        props.showalert("Number Formated","Success")
+        props.showalert("Number Formated", "Success")
     }
-    
-    
+
+
     return (
         <>
 
