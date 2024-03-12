@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
+import { Analytics } from "@vercel/analytics/react"
 import Policy from './components/Policy';
 import React, { useState, useEffect } from 'react';
 import Alert from './components/Alert';
