@@ -40,7 +40,7 @@ function App() {
   return (
     <>
       <Navbar mode={mode} togglemode={togglemode} />
-      <Analytics/>
+      <Analytics />
       <main className='container mt-4' mode={mode}>
         <div className="box fixed-top ">
 

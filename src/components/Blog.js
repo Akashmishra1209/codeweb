@@ -30,7 +30,7 @@ export default function Blog(props) {
                             <h5 class="card-title"><strong>10/3/2024</strong></h5>
                             <div class="card-text">
                                 <b>New Feature : </b>
-                                <span>Added Formate Numbers With Comma Feature To WellText.It FormatesThe Numbers From The Text With Comma.For More Details Visit The Tools Page. </span>
+                                <span>Added Formate Numbers With Comma Feature To WellText.It Formates The Numbers From The Text With Comma.For More Details Visit The Tools Page. </span>
                             </div>
                         </div>
                     </div>
