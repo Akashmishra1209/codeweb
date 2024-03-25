@@ -12,6 +12,7 @@ import Contact from './components/Contact';
 import NotFoundPage from './components/Notfound';
 import Tools from './components/Tools';
 import Login from './components/Login';
+import Download from './components/Download';
 function App() {
   const [alert, setalert] = useState(null);
   const showalert = (message, type) => {
@@ -53,7 +54,7 @@ function App() {
           <Route path="/tools" element={<Tools mode={mode} togglemode={togglemode} showalert={showalert} />} />
           {/* <Route path="/updates" element={<Blog mode={mode} togglemode={togglemode} showalert={showalert} />} /> */}
           <Route path="/updates" element={<New mode={mode} togglemode={togglemode} showalert={showalert} />} />
-          <Route path="/login" element={<Login mode={mode} togglemode={togglemode} showalert={showalert} />} />
+          <Route path="/download" element={<Download mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
         </Routes>
 

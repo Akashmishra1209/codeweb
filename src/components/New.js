@@ -47,11 +47,11 @@ const New = (props) => {
             <ul>
                 {/* Map through the blogs array and render each blog post */}
                 {blogs.map((blog) => (
-                    <li key={blog._id} className='list-unstyled '>
+                    <li key={blog._id} style={myStyle} className='list-unstyled  '>
                         <div class="row">
-                            <div class="col-sm-6 mt-2 w-100 " >
+                            <div class="col-sm-6 mt-2 w-100  " >
                                 <div class="card"style={myStyle}>
-                                    <div class="card-body">
+                                    <div class="card-body border-black">
                                         <h5 class="card-title">{formatDate(blog.createdAt)}</h5>
                                         <span class="card-text"><b>{blog.name} : </b></span>
                                        <span>{blog.desc}</span>

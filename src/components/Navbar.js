@@ -21,14 +21,15 @@ export default function Navbar(props) {
               <Link className="nav-link " aria-current="page" to="/tools">Tools</Link>
             </li>
             <li className="nav-item">
+              <Link className="nav-link " aria-current="page" to="/download">Download</Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/updates">Updates</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/contact">Contact Us</Link>
             </li>
-            {/* <li className="nav-item">
-              <Link className="nav-link" to="/login">Login</Link>
-            </li> */}
+
           </ul>
           <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
