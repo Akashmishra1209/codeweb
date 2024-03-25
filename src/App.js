@@ -2,7 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import { Analytics } from "@vercel/analytics/react"
-import Policy from './components/Policy';
+import New from './components/New';
 import React, { useState, useEffect } from 'react';
 import Alert from './components/Alert';
 import Form from './components/Form';
@@ -51,10 +51,10 @@ function App() {
           <Route path="/about" element={<About mode={mode} togglemode={togglemode} />} />
           <Route path="/contact" element={<Contact mode={mode} togglemode={togglemode} />} />
           <Route path="/tools" element={<Tools mode={mode} togglemode={togglemode} showalert={showalert} />} />
-          <Route path="/updates" element={<Blog mode={mode} togglemode={togglemode} showalert={showalert} />} />
+          {/* <Route path="/updates" element={<Blog mode={mode} togglemode={togglemode} showalert={showalert} />} /> */}
+          <Route path="/updates" element={<New mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/login" element={<Login mode={mode} togglemode={togglemode} showalert={showalert} />} />
-
-          {/* {/* <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} /> */}
+          <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
         </Routes>
 
       </main>
