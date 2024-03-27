@@ -18,7 +18,7 @@ export default function ContactUs(props) {
             <h1 className="my-4" style={TextStyle}>Contact Us</h1>
             <p className="" style={TextStyle}>If You Have Any Suggestions Or Complain About Our Site,Contact Us Now.</p>
             <div style={TextStyle} className='container '>
-                <p><FontAwesomeIcon icon={faEnvelope} style={iconStyle} /> <strong>Email:</strong> ashish71570@gmail.com</p>
+                <p><FontAwesomeIcon icon={faEnvelope} style={iconStyle} className='fa-beat' /> <strong>Email:</strong> ashish71570@gmail.com</p>
                 <p><FontAwesomeIcon icon={faPhone} style={iconStyle} /> <strong>Phone:</strong> +919983930509</p>
                 <p><FontAwesomeIcon icon={faMapMarkerAlt} style={iconStyle} /> <strong>Address:</strong> India</p>
                 <p><FaGithub /> <strong>GitHub : </strong> <a className='text-decoration-none  ' href="https://github.com/Akashmishra1209">Visit Here</a></p>

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { saveAs } from 'file-saver';
-import PropTypes from "prop-types"
+import React, { useState } from 'react'
 import '../../src/App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPhone, faMapMarkerAlt, fa } from '@fortawesome/free-solid-svg-icons';
 export default function Form(props) {
     const [text, setText] = useState("")
     const [history, setHistory] = useState([]);
@@ -61,7 +61,6 @@ export default function Form(props) {
         setText(newtext)
         props.showalert("Duplicate Words Removed", "Success")
     }
-
 
     const handleAa = () => {
         let words = text.split(" ");
@@ -206,7 +205,6 @@ export default function Form(props) {
         props.showalert("Number Formated", "Success")
     }
 
-
     return (
         <>
 
@@ -245,7 +243,10 @@ export default function Form(props) {
                 <button className={`btn btn-outline-info mx-2 my-2 " `} onClick={text.length > 0 ? removelines : null} >Remove All Lines</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={text.length > 0 ? removepunctuation : null} >Remove Punctuation</button>
                 <button className={`btn btn-outline-success mx-2 my-2`} onClick={text.length > 0 ? removeaccent : null} >Remove Accents</button>
-                <button className={`btn btn-outline-success  mx-2 my-2`} onClick={text.length > 0 ? hd : null} >Copy Text</button>
+                <button className={`btn btn-outline-success  mx-2 my-2`} onClick={text.length > 0 ? hd : null} >
+                    <svg style={{ height: "25px" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z" /></svg>
+
+                     &nbsp; Copy Text</button>
                 <button className={`btn btn-outline-info  mx-2 my-2 "`} onClick={text.length > 0 ? download : null} >Download Text</button>
                 <button className={`btn btn-outline-secondary mx-2 my-2`} onClick={text.length > 0 ? cl : null} >Clear The Text </button>
             </div >

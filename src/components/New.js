@@ -14,7 +14,7 @@ const New = (props) => {
     }
     let myStyle = {
         color: props.mode === 'dark' ? '#ffffff' : '#042743',
-        border: props.mode === 'dark' ? 'black' : 'black',
+        border: props.mode === 'dark' ? 'white' : 'black',
         backgroundColor: props.mode === 'dark' ? 'rgb(105,105,105)' : 'white',
     }
     useEffect(() => {
@@ -37,8 +37,6 @@ const New = (props) => {
         const year = date.getFullYear();
         return `${day}-${month}-${year}`;
     }
-
-
     // console.log('State blogs:', blogs); // Log state blogs
 
     return (
@@ -48,13 +46,13 @@ const New = (props) => {
                 {/* Map through the blogs array and render each blog post */}
                 {blogs.map((blog) => (
                     <li key={blog._id} style={myStyle} className='list-unstyled  '>
-                        <div class="row">
-                            <div class="col-sm-6 mt-2 w-100  " >
-                                <div class="card"style={myStyle}>
-                                    <div class="card-body border-black">
-                                        <h5 class="card-title">{formatDate(blog.createdAt)}</h5>
-                                        <span class="card-text"><b>{blog.name} : </b></span>
-                                       <span>{blog.desc}</span>
+                        <div className="row">
+                            <div className="col-sm-6 mt-2 w-100  " >
+                                <div className="card mt-4" style={myStyle}>
+                                    <div className="card-body border-black">
+                                        <h5 className="card-title">{formatDate(blog.createdAt)}</h5>
+                                        <span className="card-text"><b>{blog.name} : </b></span>
+                                        <span>{blog.desc}</span>
                                     </div>
                                 </div>
                             </div>
