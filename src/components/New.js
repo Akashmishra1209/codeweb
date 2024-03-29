@@ -14,7 +14,7 @@ const New = (props) => {
     }
     let myStyle = {
         color: props.mode === 'dark' ? '#ffffff' : '#042743',
-        border: props.mode === 'dark' ? 'white' : 'black',
+        // border: props.mode === 'dark' ? '5px solid white' : 'black',
         backgroundColor: props.mode === 'dark' ? 'rgb(105,105,105)' : 'white',
     }
     useEffect(() => {
@@ -45,11 +45,11 @@ const New = (props) => {
             <ul>
                 {/* Map through the blogs array and render each blog post */}
                 {blogs.map((blog) => (
-                    <li key={blog._id} style={myStyle} className='list-unstyled  '>
+                    <li key={blog._id} className='list-unstyled  '>
                         <div className="row">
                             <div className="col-sm-6 mt-2 w-100  " >
-                                <div className="card mt-4" style={myStyle}>
-                                    <div className="card-body border-black">
+                                <div className="card mt-4" >
+                                    <div className="card-body "  style={myStyle}>
                                         <h5 className="card-title">{formatDate(blog.createdAt)}</h5>
                                         <span className="card-text"><b>{blog.name} : </b></span>
                                         <span>{blog.desc}</span>
