@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +67,61 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
+# WellText
+
+Welcome to **WellText**, a free and fast text analyzer and text manipulation tool designed to streamline your text editing process with just one click. Our platform is dedicated to providing you with a seamless experience, allowing you to quickly modify and analyze your text without any hassle.
+
+## Features
+
+WellText offers a wide range of features to cater to all your text manipulation needs:
+
+- **Demo Text**: Generates random text to explore the tools quickly.
+- **Convert to Uppercase**: Converts the input text to uppercase.
+- **Format Numbers**: Formats the numbers from the text with commas.
+- **Convert to Lowercase**: Converts the input text to lowercase.
+- **Undo/Redo**: Undo or redo your previous action.
+- **Remove Emoji**: Remove all emojis from the given text.
+- **Remove Numbers**: Remove all numbers from the given text.
+- **Find and Replace**: Replace the matched text with a prompt.
+- **Capitalize**: Removes extra spaces and capitalizes the given text.
+- **Extract Number**: Extract numbers from the given text.
+- **Remove HTML**: Removes HTML tags from the given text and provides plain text.
+- **Extract Links**: Extract all links from the given text and separate them into a new line.
+- **Reverse Text**: Reverse the given text.
+- **Remove Extra Spaces**: Removes extra spaces from the text.
+- **Speak**: This tool speaks the given text.
+- **Encode/Decode to Base64**: Encode or decode given text to Base64.
+- **Remove Empty Lines**: Remove extra lines from text.
+- **Remove Duplicate Words**: Remove duplicate words from the text.
+- **Remove All Lines**: Convert multiple lines into a single line.
+- **Remove Punctuation**: Remove punctuation from the text.
+- **Remove Accents**: Remove accents from the text.
+- **Copy Text**: Copy analyzed text to clipboard.
+- **Download Text**: Download the analyzed text in .txt file format.
+- **Clear Text**: Clear the input field.
+
+## Getting Started
+
+To start using WellText, simply visit welltext.vercel.app and begin exploring the various tools available. The interface is intuitive, making it easy for anyone to start manipulating text right away.
+
+## Contribution
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+Don't forget to give the project a star! Thanks again!
+
+## Support
+
+For support, email ashish71570@gmail.com or join our Slack channel.
+
+
+## Acknowledgments
+
+- Akash
+---
+
+WellText - Your go-to text manipulation tool!
+
