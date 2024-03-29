@@ -3,15 +3,13 @@ import Navbar from './components/Navbar';
 import About from './components/About';
 import { Analytics } from "@vercel/analytics/react"
 import New from './components/New';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Alert from './components/Alert';
 import Form from './components/Form';
-import Blog from './components/Blog';
 import { Routes, Route } from 'react-router-dom';
 import Contact from './components/Contact';
 import NotFoundPage from './components/Notfound';
 import Tools from './components/Tools';
-import Login from './components/Login';
 import Download from './components/Download';
 function App() {
   const [alert, setalert] = useState(null);
@@ -52,7 +50,6 @@ function App() {
           <Route path="/about" element={<About mode={mode} togglemode={togglemode} />} />
           <Route path="/contact" element={<Contact mode={mode} togglemode={togglemode} />} />
           <Route path="/tools" element={<Tools mode={mode} togglemode={togglemode} showalert={showalert} />} />
-          {/* <Route path="/updates" element={<Blog mode={mode} togglemode={togglemode} showalert={showalert} />} /> */}
           <Route path="/updates" element={<New mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/download" element={<Download mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
