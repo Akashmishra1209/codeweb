@@ -19,7 +19,7 @@ export default function Blog(props) {
                             <h5 class="card-title"><strong>9/3/2024</strong></h5>
                             <div class="card-text">
                                 <b>Launching : </b>
-                                <span>WellText Is A Fast And Quick Text Analyzer Tool.It Has Many Features For Analyze And  Manipulate Your Text.Many More Features Are Upcomming.</span>
+                                <span>WellText Is A Fast And Quick Text Analyzer Tool.It Has Many Features For Analyze And  Manipulate Your Text.Many More Features Are Upcoming.</span>
                             </div>
                         </div>
                     </div>

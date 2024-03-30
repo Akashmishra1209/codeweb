@@ -209,7 +209,7 @@ export default function Form(props) {
             <div className="mb-2 ">
                 <label htmlFor="textbox" className="form-label my-2" style={TextStyle} ><h1>Try Welltext - The Free And Fast Text Analyzer And Text Manipulation Tool </h1></label>
                 <p className="text-capitalize container  " style={TextStyle}>
-                    Welcome to WellText, your go-to text editing tool for all your needs. WellText provides a user-friendly platform to enhance your writing experience. With a lot of tools, WellText empowers you to create polished and error-free content effortlessly.Also,WellText Dosen't Require Any Sign Up Or Money.It Means That You Can Enjoy This Site Without Any Problem. Your Suggestions Are Always Welcome.Many More Features Are Comming Soon.
+                    Welcome to WellText, your go-to text editing tool for all your needs. WellText provides a user-friendly platform to enhance your writing experience. With a lot of tools, WellText empowers you to create polished and error-free content effortlessly.Also,WellText Dosen't Require Any Sign Up Or Money.It Means That You Can Enjoy This Site Without Any Problem. Your Suggestions Are Always Welcome.Many More Features Are Coming Soon.
                 </p>
                 <textarea className={`form-control `} id='textbox' spellCheck="true" onChange={onchangehandler} value={text} rows="4" placeholder="Enter Some Text" required autoFocus style={props.mode === 'dark' ? textboxstyle : null}></textarea>
 

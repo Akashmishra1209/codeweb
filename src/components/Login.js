@@ -6,7 +6,7 @@ export default function Login(props) {
     }
   return (
     <div className='container '>
-        <h1 style={myStyle}>Comming Soon</h1>
+        <h1 style={myStyle}>Coming Soon</h1>
     </div>
   )
 }
