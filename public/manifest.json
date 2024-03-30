@@ -1,6 +1,6 @@
 {
-  "short_name": "Welltext - The Free And Fast Text Analyzer And Text Manipulation Tool",
-  "name": "Welcome To WellText, Your Go-To Text Editing Tool For All Your Needs. WellText Provides A User-Friendly Platform To Enhance Your Writing Experience. With A Lot Of Tools, WellText Empowers You To Create Polished And Error-Free Content Effortlessly.Also,WellText Dosen't Require Any Sign Up Or Money.It Means That You Can Enjoy This Site Without Any Problem. Your Suggestions Are Always Welcome.Many More Features Are Comming Soon.",
+  "short_name": "Welltext",
+  "name": "Welltext - The Free And Fast Text Analyzer And Text Manipulation Tool",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "favicon.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "favicon.png",
       "type": "image/png",
       "sizes": "512x512"
     }

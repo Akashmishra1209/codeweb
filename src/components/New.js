@@ -14,8 +14,7 @@ const New = (props) => {
     }
     let myStyle = {
         color: props.mode === 'dark' ? '#ffffff' : '#042743',
-        // border: props.mode === 'dark' ? '5px solid white' : 'black',
-        backgroundColor: props.mode === 'dark' ? 'rgb(105,105,105)' : 'white',
+        backgroundColor: props.mode === 'dark' ? 'RGB(16 17 19)' : 'white',
     }
     useEffect(() => {
         const fetchBlogs = async () => {
@@ -49,7 +48,7 @@ const New = (props) => {
                         <div className="row">
                             <div className="col-sm-6 mt-2 w-100  " >
                                 <div className="card mt-4" >
-                                    <div className="card-body "  style={myStyle}>
+                                    <div className="card-body " style={myStyle}>
                                         <h5 className="card-title">{formatDate(blog.createdAt)}</h5>
                                         <span className="card-text"><b>{blog.name} : </b></span>
                                         <span>{blog.desc}</span>
