@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone, faMapMarkerAlt, fa } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone, faMapMarkerAlt, fa, faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { FaGithub } from "react-icons/fa";
 
 export default function ContactUs(props) {
@@ -29,6 +29,9 @@ export default function ContactUs(props) {
                     </p>
                 <p>
                     <FaGithub className='fa-beat' /> <strong>GitHub : </strong> <a className='text-decoration-none  ' href="https://github.com/Akashmishra1209">Visit Here</a>
+                    </p>
+                <p>
+                    <FontAwesomeIcon className='fa-beat' icon={faCoffee}/> <strong>Buy Me A Coffee : </strong> <a className='text-decoration-none  ' href="https://www.buymeacoffee.com/devak">Visit Here</a>
                     </p>
             </div>
         </div>
