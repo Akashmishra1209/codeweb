@@ -14,7 +14,7 @@ const New = (props) => {
     }
     let myStyle = {
         color: props.mode === 'dark' ? '#ffffff' : '#042743',
-        backgroundColor: props.mode === 'dark' ? 'RGB(16 17 19)' : 'white',
+        backgroundColor: props.mode === 'dark' ? 'rgb(105,105,105)' : 'white',
     }
     useEffect(() => {
         const fetchBlogs = async () => {
