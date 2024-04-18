@@ -250,7 +250,7 @@ export default function Form(props) {
                 <h2 style={TextStyle}>Your Text Summary</h2>
                 <hr />
                 <p className='active' style={TextStyle}>
-                    The Text Contains <span>{text.length > 0 ? text.split(/\r\n|\r|\n/).length : text.split(/\r\n|\r|\n/).length = 0} Lines</span><span className='fw-bold '> {text.split(/\s+/).filter((word) => {
+                    The Text Contains <span>{text.length > 0 ? text.split(/\r\n|\r|\n/).length : text.split(/\r\n|\r|\n/).length = 0} Lines,</span><span className='fw-bold '> {text.split(/\s+/).filter((word) => {
                         return word.length !== 0
                     }).length} Words</span> And <span className='fw-bold '>{text.length} Characters </span> With Spaces And <span className='fw-bold '>{text.trim().length} Character</span> Without Spaces. </p>
                 <p style={TextStyle}>You Can Read It In <b> {text.split(/[ ]+/).filter((word) => {
