@@ -200,17 +200,26 @@ export default function Form(props) {
     const formatNumberWithCommas = () => {
         let newtext = text.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
-    function toSentenceCase(){
+    function toSentenceCase() {
         let txtArr = text.split(".")
         // console.log(txtArr)
         let newarr = txtArr.map(txt => {
-                    txt = txt.trim();
-                    return txt.length > 0 ? txt[0].toUpperCase()+txt.slice(1).toLowerCase() : ""
-          })
+            txt = txt.trim();
+            return txt.length > 0 ? txt[0].toUpperCase() + txt.slice(1).toLowerCase() : ""
+        })
         // console.log(newarr)
         let finalText = newarr.join(". ")
         setText(finalText)
     }
+    const sort = () => {
+        let sorting = text.split(" ");
+        sorting = sorting.sort();
+        let mem = "";
+        for (let i of sorting) {
+            mem += i + " ";
+        }
+        setText(mem);
+    };
     return (
         <>
 
@@ -231,6 +240,7 @@ export default function Form(props) {
                 <button className={`btn btn-outline-info mx-2 my-2 " `} onClick={handleAa} >Capitalize</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={lo} >Convert To Lowercase </button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={toSentenceCase} >Convert To Sentence Case </button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={sort} >Sort Text </button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={NumberExtractor} >Extract Number</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={extractLink} >Extract Links</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={removeHtml} >Remove Html</button>
