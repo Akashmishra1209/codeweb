@@ -199,10 +199,18 @@ export default function Form(props) {
     }
     const formatNumberWithCommas = () => {
         let newtext = text.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        setText(newtext)
-        props.showalert("Number Formated", "Success")
     }
-
+    function toSentenceCase(){
+        let txtArr = text.split(".")
+        // console.log(txtArr)
+        let newarr = txtArr.map(txt => {
+                    txt = txt.trim();
+                    return txt.length > 0 ? txt[0].toUpperCase()+txt.slice(1).toLowerCase() : ""
+          })
+        // console.log(newarr)
+        let finalText = newarr.join(". ")
+        setText(finalText)
+    }
     return (
         <>
 
@@ -222,6 +230,7 @@ export default function Form(props) {
                 <button className={`btn btn-outline-success mx-2 my-2`} onClick={handleRedo}>Redo</button>
                 <button className={`btn btn-outline-info mx-2 my-2 " `} onClick={handleAa} >Capitalize</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={lo} >Convert To Lowercase </button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={toSentenceCase} >Convert To Sentence Case </button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={NumberExtractor} >Extract Number</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={extractLink} >Extract Links</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={removeHtml} >Remove Html</button>
