@@ -196,9 +196,11 @@ export default function Form(props) {
             let newtext = link.join("\n")
             setText(newtext)
         }
+        props.showalert("Link Extracted", "Success");
     }
     const formatNumberWithCommas = () => {
         let newtext = text.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        props.showalert("Numbers Formatted", "Success");
     }
     function toSentenceCase() {
         let txtArr = text.split(".")
@@ -210,6 +212,7 @@ export default function Form(props) {
         // console.log(newarr)
         let finalText = newarr.join(". ")
         setText(finalText)
+        props.showalert("Converted To Sentence Case", "Success");
     }
     const sort = () => {
         let sorting = text.split(" ");
@@ -219,7 +222,20 @@ export default function Form(props) {
             mem += i + " ";
         }
         setText(mem);
+        props.showalert("Sorted In Alphbetical Order", "Success");
     };
+    function handleCount() {
+        let c=0;
+          for(let i=0;i<text.length;i++)
+           {
+               let char = text.charAt(i);
+               if((char=='a')||(char=='A')||(char=='e')||(char=='E')||(char=='i')||(char=='I')||(char=='o')||(char=='O')||(char=='u')||(char=='U'))
+               {
+                   c=c+1;
+               }
+           }
+           return c;
+       }
     return (
         <>
 
@@ -271,7 +287,7 @@ export default function Form(props) {
                 <p className='active' style={TextStyle}>
                     The Text Contains <span>{text.length > 0 ? text.split(/\r\n|\r|\n/).length : text.split(/\r\n|\r|\n/).length = 0} Lines,</span><span className='fw-bold '> {text.split(/\s+/).filter((word) => {
                         return word.length !== 0
-                    }).length} Words</span> And <span className='fw-bold '>{text.length} Characters </span> With Spaces And <span className='fw-bold '>{text.trim().length} Character</span> Without Spaces. </p>
+                    }).length} Words</span> , <span className="fw-bold">{text.length > 0 ? handleCount() : text.split(/\r\n|\r|\n/).length = 0} Vowels ,</span> <span className='fw-bold '>{text.length} Characters </span> With Spaces And <span className='fw-bold '>{text.trim().length} Character</span> Without Spaces. </p>
                 <p style={TextStyle}>You Can Read It In <b> {text.split(/[ ]+/).filter((word) => {
                     return word.length !== 0
                 }).length * 0.008} Minuts</b></p>
