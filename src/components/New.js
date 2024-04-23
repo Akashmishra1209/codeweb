@@ -19,7 +19,7 @@ const New = (props) => {
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                const response = await client.fetch(`*[_type == "update"]`);
+                const response = await client.fetch(`*[_type == "update"] | order(_createdAt desc)`);
                 console.log('Fetched data:', response); // Log fetched data
                 setBlogs(response); // Update the state with fetched blogs
             } catch (error) {
@@ -38,6 +38,7 @@ const New = (props) => {
     }
     // console.log('State blogs:', blogs); // Log state blogs
 
+    console.log(blogs.sort())
     return (
         <div>
             <h1 style={TextStyle} className='text-center '>All Updates</h1>

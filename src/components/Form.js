@@ -200,16 +200,15 @@ export default function Form(props) {
     }
     const formatNumberWithCommas = () => {
         let newtext = text.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        setText(newtext)
         props.showalert("Numbers Formatted", "Success");
     }
     function toSentenceCase() {
         let txtArr = text.split(".")
-        // console.log(txtArr)
         let newarr = txtArr.map(txt => {
             txt = txt.trim();
             return txt.length > 0 ? txt[0].toUpperCase() + txt.slice(1).toLowerCase() : ""
         })
-        // console.log(newarr)
         let finalText = newarr.join(". ")
         setText(finalText)
         props.showalert("Converted To Sentence Case", "Success");
@@ -225,17 +224,15 @@ export default function Form(props) {
         props.showalert("Sorted In Alphbetical Order", "Success");
     };
     function handleCount() {
-        let c=0;
-          for(let i=0;i<text.length;i++)
-           {
-               let char = text.charAt(i);
-               if((char=='a')||(char=='A')||(char=='e')||(char=='E')||(char=='i')||(char=='I')||(char=='o')||(char=='O')||(char=='u')||(char=='U'))
-               {
-                   c=c+1;
-               }
-           }
-           return c;
-       }
+        let c = 0;
+        for (let i = 0; i < text.length; i++) {
+            let char = text.charAt(i);
+            if ((char == 'a') || (char == 'A') || (char == 'e') || (char == 'E') || (char == 'i') || (char == 'I') || (char == 'o') || (char == 'O') || (char == 'u') || (char == 'U')) {
+                c = c + 1;
+            }
+        }
+        return c;
+    }
     return (
         <>
 
