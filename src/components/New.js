@@ -7,7 +7,7 @@ const client = sanityClient({
     useCdn: true, // Use the Content Delivery Network for faster response times
 });
 
-const New = (props) => {
+export default function New(props) {
     const [blogs, setBlogs] = useState([]);
     let TextStyle = {
         color: props.mode === 'dark' ? 'white' : 'black',
@@ -63,5 +63,3 @@ const New = (props) => {
         </div>
     );
 };
-
-export default New;

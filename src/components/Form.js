@@ -223,7 +223,7 @@ export default function Form(props) {
         setText(mem);
         props.showalert("Sorted In Alphbetical Order", "Success");
     };
-    const  handleCount=()=> {
+    const handleCount = () => {
         let c = 0;
         for (let i = 0; i < text.length; i++) {
             let char = text.charAt(i);
@@ -233,7 +233,7 @@ export default function Form(props) {
         }
         return c;
     }
-    const consonantsCount=()=> {
+    const consonantsCount = () => {
         var count = 0;
 
         for (var i = 0; i < text.length; i++) {
@@ -243,6 +243,9 @@ export default function Form(props) {
             }
         }
         return count;
+    }
+    const countSpace = () => {
+        return text.split(" ").length - 1;
     }
     return (
         <>
@@ -295,7 +298,7 @@ export default function Form(props) {
                 <p className='active' style={TextStyle}>
                     The Text Contains <span>{text.length > 0 ? text.split(/\r\n|\r|\n/).length : text.split(/\r\n|\r|\n/).length = 0} Lines,</span><span className='fw-bold '> {text.split(/\s+/).filter((word) => {
                         return word.length !== 0
-                    }).length} Words</span> , <span className="fw-bold">{text.length > 0 ? handleCount() : text.split(/\r\n|\r|\n/).length = 0} Vowels ,</span> <span className="fw-bold">{text.length > 0 ? consonantsCount() : text.split(/\r\n|\r|\n/).length = 0} Consonants ,</span> <span className='fw-bold '>{text.length} Characters </span> With Spaces And <span className='fw-bold '>{text.trim().length} Character</span> Without Spaces. </p>
+                    }).length} Words</span> , <span className="fw-bold">{text.length > 0 ? handleCount() : text.split(/\r\n|\r|\n/).length = 0} Vowels ,</span> <span className="fw-bold">{text.length > 0 ? consonantsCount() : text.split(/\r\n|\r|\n/).length = 0} Consonants </span>, <span className="fw-bold">{text.length > 0 ? countSpace() : text.split(/\r\n|\r|\n/).length = 0} Spaces ,</span> <span className='fw-bold '>{text.length} Characters </span> With Spaces And <span className='fw-bold '>{text.trim().length} Character</span> Without Spaces. </p>
                 <p style={TextStyle}>You Can Read It In <b> {text.split(/[ ]+/).filter((word) => {
                     return word.length !== 0
                 }).length * 0.008} Minuts</b></p>
