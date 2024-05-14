@@ -150,6 +150,14 @@ export default function Tools(props) {
                 <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2">
                     <div className="card" style={myStyle}>
                         <div className="card-body">
+                            <h5 className="card-title">Remove All Spaces</h5>
+                            <p className="card-text">This Tool Removes All Spaces From The Text.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2">
+                    <div className="card" style={myStyle}>
+                        <div className="card-body">
                             <h5 className="card-title">Speak</h5>
                             <p className="card-text">This Tool Speaks The Given Text </p>
                         </div>

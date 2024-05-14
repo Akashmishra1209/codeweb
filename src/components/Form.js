@@ -247,6 +247,12 @@ export default function Form(props) {
     const countSpace = () => {
         return text.split(" ").length - 1;
     }
+    const removeAllSpaces = () => {
+        let newText = text.replaceAll(" ","")
+        console.log(newText)
+        setText(newText)
+        props.showalert("All Spaces Removed", "Success");
+    }
     return (
         <>
 
@@ -278,6 +284,7 @@ export default function Form(props) {
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={findAndReplace} >Find And Replace</button>
                 <button className={`btn btn-outline-success mx-2 my-2`} onClick={reverseText} >Reverse Text</button>
                 <button className={`btn btn-outline-info mx-2 my-2 " `} onClick={re} >Remove Extra Spaces</button>
+                <button className={`btn btn-outline-info mx-2 my-2 " `} onClick={removeAllSpaces} >Remove All Spaces</button>
                 <button className={`btn btn-outline-info mx-2 my-2 " `} onClick={removeEmoji} >Remove Emoji</button>
                 <button className={`btn btn-outline-info mx-2 my-2 " `} onClick={removeNumber} >Remove Numbers</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={removeextralines} >Remove Empty Lines</button>
