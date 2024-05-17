@@ -26,4 +26,4 @@ const Post = () => {
     );
 };
 
-export default ;
+export default Post;
