@@ -27,7 +27,7 @@ const WellText = (props) => {
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                const response = await client.fetch(`*[_type == "update"]`);
+                const response = await client.fetch(`*[_type == "update"] | order(_createdAt desc)`);
                 setBlogs(response);
                 setFilteredBlogs(response);
             } catch (error) {
