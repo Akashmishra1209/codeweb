@@ -7,7 +7,7 @@ const client = sanityClient({
     useCdn: true, // Use the Content Delivery Network for faster response times
 });
 
-const Post = () => {
+const Post = (props) => {
     // Extract the slug from the URL
     const slug = window.location.pathname.split('/update/')[1];
     console.log(slug);
@@ -27,9 +27,13 @@ const Post = () => {
         };
         fetchBlogs();
     }, [slug]);
+    let TextStyle = {
+        color: props.mode === 'dark' ? '#ffffff' : '#042743',
+        // backgroundColor: props.mode === 'dark' ? 'rgb(105,105,105)' : 'white',
+    }
 
     if (!post) {
-        return <div>No Post Found</div>;
+        return <h1 style={TextStyle}>No Update Found</h1>;
     }
 
     return (

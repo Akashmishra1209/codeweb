@@ -3,13 +3,14 @@ import '../../src/App.css';
 export default function Form(props) {
     const [text, setText] = useState("")
     const [history, setHistory] = useState([]);
-    const [undoStack, setUndoStack] = useState([]);
+    const [undoStack, setUndoStack] = useState([""]);
     const [redoStack, setRedoStack] = useState([]);
 
     const onchangehandler = (event) => {
         let newtext = event.target.value;
         setText(newtext);
         setUndoStack([...undoStack, newtext]);
+        setRedoStack([]); // Clear redo stack on new input
     }
 
     const up = () => {
@@ -129,23 +130,31 @@ export default function Form(props) {
     }
     const handleUndo = () => {
         if (undoStack.length > 1) {
-            const currentText = undoStack.pop();
-            setRedoStack([...redoStack, currentText]);
-            setText(undoStack[undoStack.length - 1]);
-            setUndoStack([...undoStack]);
+            const currentText = undoStack[undoStack.length - 2]; // Get the previous text from the stack
+            const updatedUndoStack = [...undoStack.slice(0, -1)]; // Remove the last entry (current text)
+            
+            setRedoStack([text, ...redoStack]); // Push the current text to the redo stack
+            setText(currentText); // Set the text to the previous value
+            setUndoStack(updatedUndoStack); // Update the undo stack state
+            
+            props.showalert("Action Undo", "Success");
         }
-        props.showalert("Action Undo", "Success")
     };
-
+    
     const handleRedo = () => {
         if (redoStack.length > 0) {
-            const nextText = redoStack.pop();
-            setUndoStack([...undoStack, text]);
-            setText(nextText);
-            setRedoStack([...redoStack]);
+            const nextText = redoStack[0]; // Get the next text from the redo stack
+            const updatedRedoStack = [...redoStack.slice(1)]; // Remove the first entry (next text)
+            
+            setUndoStack([...undoStack, text]); // Push the current text to the undo stack
+            setText(nextText); // Set the text to the next value
+            setRedoStack(updatedRedoStack); // Update the redo stack state
+            
+            props.showalert("Action Redo", "Success");
         }
-        props.showalert("Action Redo", "Success")
     };
+    
+    
 
     const removeEmoji = () => {
 
