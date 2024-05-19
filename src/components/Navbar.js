@@ -1,7 +1,12 @@
-import React, { } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-
 export default function Navbar(props) {
+  const [searchText, setsearchText] = useState("")
+  const handleQueryChange = (event) => {
+    let newtext = event.target.value;
+    setsearchText(newtext);
+}
+
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode}  bg-${props.mode} `}>
       <div className="container-fluid">
@@ -35,8 +40,8 @@ export default function Navbar(props) {
 
           </ul>
           <form className="d-flex" role="search">
-            <input className="form-control me-2" id="wordtxt" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success" type="submit" id='searchbtn'>Search</button>
+            <input className="form-control me-2" id="wordtxt" type="search" placeholder="Search" aria-label="Search" value={searchText} onChange={handleQueryChange} />
+            <a className="btn btn-outline-success" type="submit" id='searchbtn' href={`/search/${searchText}`}  >Search</a>
           </form>
           <div className={`form-check form-switch mx-2 text-${props.mode === 'light' ? 'dark' : 'light'}`}>
             <input className="form-check-input" type="checkbox" role="switch" onClick={props.togglemode} id="flexSwitchCheckDefault" />

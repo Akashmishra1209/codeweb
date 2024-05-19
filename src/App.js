@@ -13,6 +13,7 @@ import Tools from './components/Tools';
 import Download from './components/Download';
 import Post from "./components/slug"
 import RichEditor from './components/RichEditor';
+import Search from './components/Search';
 function App() {
   const [alert, setalert] = useState(null);
   const showalert = (message, type) => {
@@ -55,10 +56,10 @@ function App() {
           <Route path="/updates" element={<New mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/download" element={<Download mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/editor" element={<RichEditor mode={mode} togglemode={togglemode} showalert={showalert} />} />
-          <Route path="/up/:uid" element={<Post mode={mode} togglemode={togglemode} showalert={showalert} />} />
+          <Route path="/update/:uid" element={<Post mode={mode} togglemode={togglemode} showalert={showalert} />} />
+          <Route path="/search/:query" element={<Search mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
         </Routes>
-
       </main>
 
     </>

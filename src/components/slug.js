@@ -9,9 +9,9 @@ const client = sanityClient({
 
 const Post = () => {
     // Extract the slug from the URL
-    const slug = window.location.pathname.split('/up/')[1];
+    const slug = window.location.pathname.split('/update/')[1];
     console.log(slug);
-    
+
     const [post, setPost] = useState(null);
 
     useEffect(() => {
@@ -35,9 +35,10 @@ const Post = () => {
     return (
         <div>
             <h1>{post.name}</h1>
-          <PortableText
-          value={post.content}
-          />
+            <PortableText
+                value={post.content}
+                
+            />
         </div>
     );
 };
