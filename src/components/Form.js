@@ -132,29 +132,29 @@ export default function Form(props) {
         if (undoStack.length > 1) {
             const currentText = undoStack[undoStack.length - 2]; // Get the previous text from the stack
             const updatedUndoStack = [...undoStack.slice(0, -1)]; // Remove the last entry (current text)
-            
+
             setRedoStack([text, ...redoStack]); // Push the current text to the redo stack
             setText(currentText); // Set the text to the previous value
             setUndoStack(updatedUndoStack); // Update the undo stack state
-            
+
             props.showalert("Action Undo", "Success");
         }
     };
-    
+
     const handleRedo = () => {
         if (redoStack.length > 0) {
             const nextText = redoStack[0]; // Get the next text from the redo stack
             const updatedRedoStack = [...redoStack.slice(1)]; // Remove the first entry (next text)
-            
+
             setUndoStack([...undoStack, text]); // Push the current text to the undo stack
             setText(nextText); // Set the text to the next value
             setRedoStack(updatedRedoStack); // Update the redo stack state
-            
+
             props.showalert("Action Redo", "Success");
         }
     };
-    
-    
+
+
 
     const removeEmoji = () => {
 
@@ -257,7 +257,7 @@ export default function Form(props) {
         return text.split(" ").length - 1;
     }
     const removeAllSpaces = () => {
-        let newText = text.replaceAll(" ","")
+        let newText = text.replaceAll(" ", "")
         console.log(newText)
         setText(newText)
         props.showalert("All Spaces Removed", "Success");

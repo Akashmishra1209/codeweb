@@ -61,6 +61,8 @@ function App() {
           <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
         </Routes>
       </main>
+      <footer className={`py-4 text-center text-${mode=='light'?'black':'secondary'}`}>Copyright &copy; <a href="https://welltext.vercel.app" className='text-decoration-none'>welltext.vercel.app</a> All Rights Reserved
+      </footer>
 
     </>
   )
