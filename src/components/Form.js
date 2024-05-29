@@ -5,7 +5,6 @@ export default function Form(props) {
     const [history, setHistory] = useState([]);
     const [undoStack, setUndoStack] = useState([""]);
     const [redoStack, setRedoStack] = useState([]);
-
     const onchangehandler = (event) => {
         let newtext = event.target.value;
         setText(newtext);
@@ -262,6 +261,30 @@ export default function Form(props) {
         setText(newText)
         props.showalert("All Spaces Removed", "Success");
     }
+    const summarizeText = async () => {
+        const url = 'https://text-summarizer-api.p.rapidapi.com/summarizer';
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/x-www-form-urlencoded',
+                'X-RapidAPI-Key': '22446c1a86msh2b323114a96c069p1327e1jsne34f003a610d',
+                'X-RapidAPI-Host': 'text-summarizer-api.p.rapidapi.com'
+            },
+            body: new URLSearchParams({
+                text: text,
+                output_percentage: '40'
+            })
+        };
+
+        try {
+            const response = await fetch(url, options);
+            const result = await response.json();
+            setText(result[0]);
+            props.showalert("Text Summarized.", "Success")
+        } catch (error) {
+            console.error(error);
+        }
+    }
     return (
         <>
 
@@ -282,6 +305,7 @@ export default function Form(props) {
                 <button className={`btn btn-outline-info mx-2 my-2 " `} onClick={handleAa} >Capitalize</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={lo} >Convert To Lowercase </button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={toSentenceCase} >Convert To Sentence Case </button>
+                <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={summarizeText} >Summarize Text</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={sort} >Sort Text </button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={NumberExtractor} >Extract Number</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={extractLink} >Extract Links</button>
