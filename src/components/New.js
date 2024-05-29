@@ -40,7 +40,7 @@ export default function New(props) {
 
     console.log(blogs.sort())
     return (
-        <div className="min-vh-100">
+        <div>
             <h1 style={TextStyle} className='text-center '>All Updates</h1>
             <ul>
                 {/* Map through the blogs array and render each blog post */}

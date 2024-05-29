@@ -43,7 +43,7 @@ function App() {
     <>
       <Navbar mode={mode} togglemode={togglemode} />
       <Analytics />
-      <main className='container mt-4' mode={mode}>
+      <main className='container mt-4 min-vh-100' mode={mode}>
         <div className="box fixed-top ">
 
           <Alert alert={alert} />
@@ -61,8 +61,12 @@ function App() {
           <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
         </Routes>
       </main>
-      <footer className={`py-4 text-center text-${mode=='light'?'black':'secondary'}`}>Copyright &copy; <a href="https://welltext.vercel.app" className='text-decoration-none'>welltext.vercel.app</a> All Rights Reserved
+      <footer className={`py-4 text-center text-${mode === 'light' ? 'black' : 'white'}`}>
+        <span>Copyright &copy; 2024 </span>
+        <a href="https://welltext.vercel.app" className="text-decoration-none">welltext.vercel.app</a>
+        <span> All Rights Reserved</span>
       </footer>
+
 
     </>
   )

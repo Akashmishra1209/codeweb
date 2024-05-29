@@ -67,7 +67,7 @@ const WellText = (props) => {
     };
 
     return (
-        <div className="min-vh-100">
+        <div>
             <h1 style={TextStyle} className='text-center '>Result For <span className='fw-bold'>{searchQuery}</span></h1>
             <ul>
                 {filteredBlogs.map((blog) => (

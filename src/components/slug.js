@@ -37,7 +37,7 @@ const Post = (props) => {
     }
 
     return (
-        <div className="min-vh-100">
+        <div>
             <h1>{post.name}</h1>
             <PortableText
                 value={post.content}

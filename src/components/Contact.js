@@ -14,7 +14,7 @@ export default function ContactUs(props) {
     }
 
     return (
-        <div className="container min-vh-100 my-5">
+        <div className="container my-5">
             <h1 className="my-4" style={TextStyle}>Contact Us</h1>
             <p className="" style={TextStyle}>If You Have Any Suggestions Or Complain About Our Site,Contact Us Now.</p>
             <div style={TextStyle} className='container '>
