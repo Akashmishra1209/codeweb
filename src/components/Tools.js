@@ -142,6 +142,22 @@ export default function Tools(props) {
                 <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2">
                     <div className="card" style={myStyle}>
                         <div className="card-body">
+                            <h5 className="card-title">Find Index</h5>
+                            <p className="card-text">Find The Index Of Given Word From The Text</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2">
+                    <div className="card" style={myStyle}>
+                        <div className="card-body">
+                            <h5 className="card-title">Find Word Frequency</h5>
+                            <p className="card-text">Find The Frequency Of Given Word From The Text</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2">
+                    <div className="card" style={myStyle}>
+                        <div className="card-body">
                             <h5 className="card-title">Extract Links</h5>
                             <p className="card-text">Extract All Links  From The Given Text And Sepreate Them In New Line</p>
                         </div>

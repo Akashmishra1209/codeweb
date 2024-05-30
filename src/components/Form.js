@@ -285,6 +285,18 @@ export default function Form(props) {
             console.error(error);
         }
     }
+    function countWordFrequency() {
+        const word = prompt("Enter the word to count:").toLowerCase();
+        const ntext = text.toLowerCase();
+        const frequency = {};
+        for (const w of ntext.split(/\s+/)) {
+          if (w === word) {
+            frequency[w] = (frequency[w] || 0) + 1;
+          }
+        }
+        alert(`The word "${word}" appears ${frequency[word] || 0} times in the text.`);
+      }
+      
     return (
         <>
 
@@ -311,6 +323,7 @@ export default function Form(props) {
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={extractLink} >Extract Links</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={removeHtml} >Remove Html</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={checkIndex} >Find Index</button>
+                <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={countWordFrequency} >Find Word Frequency</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={formatNumberWithCommas} >Formate Numbers</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={speak} >Speak</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={Paste} >Paste From Clipboard</button>
