@@ -30,6 +30,14 @@ export default function Tools(props) {
                 <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2 "  >
                     <div className="card" style={myStyle} >
                         <div className="card-body">
+                            <h5 className="card-title">Whiteboard</h5>
+                            <p className="card-text">The Whiteboard Allows Users To Draw Anything</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2 "  >
+                    <div className="card" style={myStyle} >
+                        <div className="card-body">
                             <h5 className="card-title">Summarize Text</h5>
                             <p className="card-text">Summarize The Text In Few Lines.</p>
                         </div>

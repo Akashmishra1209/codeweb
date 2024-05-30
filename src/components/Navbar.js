@@ -35,6 +35,9 @@ export default function Navbar(props) {
               <Link className="nav-link" to="/editor">Editor</Link>
             </li>
             <li className="nav-item">
+              <Link className="nav-link" to="/board">Whiteboard</Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/contact">Contact Us</Link>
             </li>
 
