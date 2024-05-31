@@ -15,21 +15,18 @@ export default function RichEditor() {
                 initialValue="<p>Welcome To WellText</p>"
                 init={{
                     height: 500,
-                    menubar: true, // Enable the menu bar
+                    menubar: true,
                     plugins: [
-                        // Essential plugins
-                        'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
-                        'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-                        'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount',
-                        'textcolor', // Text color picker
-                        'textpattern', // Text patterns
-                        'emoticons', // Emoticons
+                        'advlist autolink lists link image charmap preview anchor',
+                        'searchreplace visualblocks code fullscreen',
+                        'insertdatetime media table code help wordcount',
+                        'textcolor textpattern emoticons'
                     ],
                     toolbar: 'undo redo | blocks | ' +
-                        'bold italic forecolor | alignleft aligncenter ' +
+                        'bold italic forecolor fontselect | alignleft aligncenter ' +
                         'alignright alignjustify | bullist numlist outdent indent | ' +
                         'removeformat | help',
-                    content_style: 'body {font - family:Helvetica,Arial,sans-serif; font-size:14px }'
+                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
                 }}
             />
         </>

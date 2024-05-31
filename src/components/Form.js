@@ -290,13 +290,24 @@ export default function Form(props) {
         const ntext = text.toLowerCase();
         const frequency = {};
         for (const w of ntext.split(/\s+/)) {
-          if (w === word) {
-            frequency[w] = (frequency[w] || 0) + 1;
-          }
+            if (w === word) {
+                frequency[w] = (frequency[w] || 0) + 1;
+            }
         }
         alert(`The word "${word}" appears ${frequency[word] || 0} times in the text.`);
-      }
-      
+    }
+    const saveText = () => {
+        localStorage.setItem("text", text)
+        props.showalert("Text Saved.", "Success")
+    }
+    const loadText = () => {
+        if (localStorage.getItem("text") == null) {
+            alert("No Text Saved.")
+        } else {
+            let newText = localStorage.getItem("text")
+            setText(newText)
+        }
+    }
     return (
         <>
 
@@ -311,6 +322,7 @@ export default function Form(props) {
                     <b>Note : </b> The Remove All Lines Button Joins The All Text Into  One Line.It Also Can Be Used For Compressing Html,Css And Javascript.
                 </div>
                 <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={generateRandomText} >Demo Text</button>
+                <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={loadText} >Load Text</button>
                 <button className={`btn btn-outline-success mx-2 my-2`} onClick={up} >Convert To Uppercase </button>
                 <button className={`btn btn-outline-success mx-2 my-2`} onClick={handleUndo} >Undo </button>
                 <button className={`btn btn-outline-success mx-2 my-2`} onClick={handleRedo}>Redo</button>
@@ -341,6 +353,7 @@ export default function Form(props) {
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={text.length > 0 ? removepunctuation : null} >Remove Punctuation</button>
                 <button className={`btn btn-outline-success mx-2 my-2`} onClick={text.length > 0 ? removeaccent : null} >Remove Accents</button>
                 <button className={`btn btn-outline-success  mx-2 my-2`} onClick={text.length > 0 ? hd : null} >Copy Text</button>
+                <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={saveText} >Save Text</button>
                 <button className={`btn btn-outline-info  mx-2 my-2 "`} onClick={text.length > 0 ? download : null} >Download Text</button>
                 <button className={`btn btn-outline-secondary mx-2 my-2`} onClick={text.length > 0 ? cl : null} >Clear The Text </button>
             </div >
