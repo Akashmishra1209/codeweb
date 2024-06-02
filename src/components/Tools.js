@@ -22,6 +22,14 @@ export default function Tools(props) {
                 <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2 "  >
                     <div className="card" style={myStyle} >
                         <div className="card-body">
+                            <h5 className="card-title">Write With AI</h5>
+                            <p className="card-text">Generate Text By AI Based On Prompt.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-sm-6 mb-3 mb-sm-0 mt-xl-2 "  >
+                    <div className="card" style={myStyle} >
+                        <div className="card-body">
                             <h5 className="card-title">Load Text</h5>
                             <p className="card-text">Load The Saved Text From The Beowser.</p>
                         </div>

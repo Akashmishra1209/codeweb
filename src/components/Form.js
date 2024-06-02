@@ -308,6 +308,33 @@ export default function Form(props) {
             setText(newText)
         }
     }
+    const writeWithAI = async() => {
+        let description = prompt("Enter The Topic")
+        let wordLimit = prompt("Select Word Count")
+        const url = 'https://ai-essay-generator.p.rapidapi.com/generate/essay/v1/';
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/x-www-form-urlencoded',
+                'X-RapidAPI-Key': '22446c1a86msh2b323114a96c069p1327e1jsne34f003a610d',
+                'X-RapidAPI-Host': 'ai-essay-generator.p.rapidapi.com'
+            },
+            body: new URLSearchParams({
+                description: description,
+                mode: 'Standard',
+                word_count:wordLimit,
+            })
+        };
+
+        try {
+            const response = await fetch(url, options);
+            const result = await response.json();
+            setText(result.essay)
+            props.showalert("Text Generated","Success")
+        } catch (error) {
+            console.error(error);
+        }
+    }
     return (
         <>
 
@@ -322,6 +349,7 @@ export default function Form(props) {
                     <b>Note : </b> The Remove All Lines Button Joins The All Text Into  One Line.It Also Can Be Used For Compressing Html,Css And Javascript.
                 </div>
                 <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={generateRandomText} >Demo Text</button>
+                <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={writeWithAI} >Write With AI</button>
                 <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={loadText} >Load Text</button>
                 <button className={`btn btn-outline-success mx-2 my-2`} onClick={up} >Convert To Uppercase </button>
                 <button className={`btn btn-outline-success mx-2 my-2`} onClick={handleUndo} >Undo </button>
