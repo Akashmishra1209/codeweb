@@ -52,8 +52,8 @@ export default function New(props) {
                                     <div className="card-body " style={myStyle}>
                                         <h5 className="card-title">{formatDate(blog.createdAt)}</h5>
                                         <span className="card-text"><b>{blog.name} : </b></span>
-                                        <span>{blog.desc}</span> 
-                                       <a className='btn btn-sm btn-primary' href={`/update/${blog.slug.current}`}>Read More</a>
+                                        <span>{blog.desc}</span> <br />
+                                       <a className='btn btn-sm btn-primary mt-1' href={`/update/${blog.slug.current}`}>Read More</a>
                                     </div>
                                 </div>
                             </div>
