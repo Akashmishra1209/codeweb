@@ -337,7 +337,7 @@ export default function Form(props) {
         }
     }
     const translateText = () => {
-        translate(text, { to: "hi", corsUrl: "http://cors-anywhere.herokuapp.com/" })
+        translate(text, { to: "hi", corsUrl: "https://cors-anywhere.herokuapp.com/" })
             .then(res => {
                 setText(res.text)
                 props.showalert("Text Translated", "Success")
