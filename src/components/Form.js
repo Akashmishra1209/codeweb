@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../../src/App.css';
+import { translate } from "google-translate-api-browser"
 export default function Form(props) {
     const [text, setText] = useState("")
     const [history, setHistory] = useState([]);
@@ -308,7 +309,7 @@ export default function Form(props) {
             setText(newText)
         }
     }
-    const writeWithAI = async() => {
+    const writeWithAI = async () => {
         let description = prompt("Enter The Topic")
         let wordLimit = prompt("Select Word Count")
         const url = 'https://ai-essay-generator.p.rapidapi.com/generate/essay/v1/';
@@ -322,7 +323,7 @@ export default function Form(props) {
             body: new URLSearchParams({
                 description: description,
                 mode: 'Standard',
-                word_count:wordLimit,
+                word_count: wordLimit,
             })
         };
 
@@ -330,10 +331,20 @@ export default function Form(props) {
             const response = await fetch(url, options);
             const result = await response.json();
             setText(result.essay)
-            props.showalert("Text Generated","Success")
+            props.showalert("Text Generated", "Success")
         } catch (error) {
             console.error(error);
         }
+    }
+    const translateText = () => {
+        translate(text, { to: "hi", corsUrl: "http://cors-anywhere.herokuapp.com/" })
+            .then(res => {
+                setText(res.text)
+                props.showalert("Text Translated", "Success")
+            })
+            .catch(err => {
+                console.error(err);
+            });
     }
     return (
         <>
@@ -351,6 +362,7 @@ export default function Form(props) {
                 <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={generateRandomText} >Demo Text</button>
                 <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={writeWithAI} >Write With AI</button>
                 <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={loadText} >Load Text</button>
+                <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={translateText} >Translate Text</button>
                 <button className={`btn btn-outline-success mx-2 my-2`} onClick={up} >Convert To Uppercase </button>
                 <button className={`btn btn-outline-success mx-2 my-2`} onClick={handleUndo} >Undo </button>
                 <button className={`btn btn-outline-success mx-2 my-2`} onClick={handleRedo}>Redo</button>
