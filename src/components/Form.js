@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../../src/App.css';
 import { translate } from "google-translate-api-browser"
+import Zoho from './Zoho';
 export default function Form(props) {
     const [text, setText] = useState("")
     const [history, setHistory] = useState([]);

@@ -58,6 +58,7 @@ function App() {
           <Route path="/download" element={<Download mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/editor" element={<RichEditor mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/board" element={<WhiteBoard mode={mode} togglemode={togglemode} showalert={showalert} />} />
+          <Route path="/zohoverify/verifyforzoho.html" element={<Zoho mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/update/:uid" element={<Post mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/search/:query" element={<Search mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
