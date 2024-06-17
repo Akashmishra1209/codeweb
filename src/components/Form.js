@@ -346,6 +346,16 @@ export default function Form(props) {
                 console.error(err);
             });
     }
+    const removeVowel = () => {
+        let newText = text.replace(/[aeiou]/gi, "")
+        setText(newText)
+        props.showalert("Vowels Removed", "Success")
+    }
+    const removeConsonants = () => {
+        let newText = text.replace(/[^aeiou\s_]/gi, "")
+        setText(newText)
+        props.showalert("Consonant Removed", "Success")
+    }
     return (
         <>
 
@@ -374,6 +384,8 @@ export default function Form(props) {
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={NumberExtractor} >Extract Number</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={extractLink} >Extract Links</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={removeHtml} >Remove Html</button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={removeVowel} >Remove Vowel</button>
+                <button className={`btn btn-outline-primary mx-2 my-2`} onClick={removeConsonants} >Remove Consonant</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={checkIndex} >Find Index</button>
                 <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={countWordFrequency} >Find Word Frequency</button>
                 <button className={`btn btn-outline-primary mx-2 my-2`} onClick={formatNumberWithCommas} >Formate Numbers</button>
