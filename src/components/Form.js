@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../../src/App.css';
 import { translate } from "google-translate-api-browser"
+import { GoogleGenerativeAI } from "@google/generative-ai"
 export default function Form(props) {
     const [text, setText] = useState("")
     const [history, setHistory] = useState([]);
@@ -356,6 +357,20 @@ export default function Form(props) {
         setText(newText)
         props.showalert("Consonant Removed", "Success")
     }
+    const improveText = async() => {
+        const genAI = new GoogleGenerativeAI("AIzaSyBI-5HpvfOBCDqmdEsVWsHZ_8hQH_ulLrc")
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
+        const userPrompt = prompt("Enter Instructions To Improve","Focus On WellText")
+        if(userPrompt == null){
+            alert("Please Enter Valid Text")
+        }
+        else{
+        const result = await model.generateContent(userPrompt+" "+text);
+        const response = await result.response;
+        setText(response.text())
+        props.showalert("Text Improved","Success")
+    }
+    }
     return (
         <>
 
@@ -371,6 +386,7 @@ export default function Form(props) {
                 </div>
                 <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={generateRandomText} >Demo Text</button>
                 <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={writeWithAI} >Write With AI</button>
+                <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={improveText} >Improve With AI</button>
                 <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={loadText} >Load Text</button>
                 <button className={`btn btn-outline-primary  mx-2 my-2 `} onClick={translateText} >Translate Text</button>
                 <button className={`btn btn-outline-success mx-2 my-2`} onClick={up} >Convert To Uppercase </button>
