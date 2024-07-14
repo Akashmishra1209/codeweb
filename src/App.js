@@ -6,7 +6,7 @@ import New from './components/New';
 import React, { useState } from 'react';
 import Alert from './components/Alert';
 import Form from './components/Form';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route ,Navigate} from 'react-router-dom';
 import Contact from './components/Contact';
 import NotFoundPage from './components/Notfound';
 import Tools from './components/Tools';
@@ -15,6 +15,9 @@ import Post from "./components/slug"
 import RichEditor from './components/RichEditor';
 import Search from './components/Search';
 import WhiteBoard from './components/WhiteBoard';
+import Login from './admin/Login';
+import Admin from './admin/Admin';
+import { isAuthenticated } from './admin/auth';
 function App() {
   const [alert, setalert] = useState(null);
   const showalert = (message, type) => {
@@ -58,6 +61,9 @@ function App() {
           <Route path="/download" element={<Download mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/editor" element={<RichEditor mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/board" element={<WhiteBoard mode={mode} togglemode={togglemode} showalert={showalert} />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={isAuthenticated() ? <Admin /> : <Navigate to="/login" />}
+          />
           <Route path="/update/:uid" element={<Post mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/search/:query" element={<Search mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path='*' element={<NotFoundPage mode={mode} togglemode={togglemode} />} />
