@@ -13,30 +13,40 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (login(email, password)) {
-            navigate('/admin');
+            navigate('/admin/dashboard');
         } else {
             setError('Invalid email or password');
         }
     };
 
     return (
-        <div className='container'>
+        <div className="container mt-5">
             <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                /><br/>
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button type="submit">Login</button>
-                {error && <p>{error}</p>}
+            <form onSubmit={handleSubmit} className="w-50 mx-auto">
+                <div className="mb-3">
+                    <label htmlFor="email" className="form-label">Email</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="email"
+                        placeholder="Enter email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="password" className="form-label">Password</label>
+                    <input
+                        type="password"
+                        className="form-control"
+                        id="password"
+                        placeholder="Enter password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <button type="submit" className="btn btn-primary">Login</button>
+                {error && <p className="text-danger mt-3">{error}</p>}
             </form>
         </div>
     );

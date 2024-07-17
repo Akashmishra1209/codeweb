@@ -1,25 +1,28 @@
 // src/admin/Admin.js
 
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { logout, isAuthenticated } from './auth';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Sidebar from './Sidebar';
+import Dashboard from './Dashboard';
+import Users from './Users';
+import Settings from './Settings';
+import { isAuthenticated } from './auth'; // Assume you have an auth.js with this function
 
 const Admin = () => {
-    const navigate = useNavigate();
-
-    const handleLogout = () => {
-        logout();
-        navigate('/login');
-    };
-
     if (!isAuthenticated()) {
-        navigate('/login');
+        return <Navigate to="/login" />;
     }
 
     return (
-        <div>
-            <h1>Admin Panel</h1>
-            <button onClick={handleLogout}>Logout</button>
+        <div className="d-flex">
+            <Sidebar />
+            <div className="flex-grow-1 p-3">
+                <Routes>
+                    <Route path="/admin/dashboard" element={<Dashboard />} />
+                    <Route path="/admin/users" element={<Users />} />
+                    <Route path="/admin/settings" element={<Settings />} />
+                </Routes>
+            </div>
         </div>
     );
 };

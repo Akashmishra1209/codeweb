@@ -62,7 +62,8 @@ function App() {
           <Route path="/editor" element={<RichEditor mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/board" element={<WhiteBoard mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/admin" element={isAuthenticated() ? <Admin /> : <Navigate to="/login" />}
+          <Route path="/admin" element={isAuthenticated() ? <Admin /> : <Navigate to="/login" />}/>
+          <Route path="/admin/*" element={isAuthenticated() ? <Admin /> : <Navigate to="/login" />}
           />
           <Route path="/update/:uid" element={<Post mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/search/:query" element={<Search mode={mode} togglemode={togglemode} showalert={showalert} />} />
