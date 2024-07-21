@@ -4,12 +4,18 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { KindeProvider } from '@kinde-oss/kinde-auth-react';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <KindeProvider clientId="c6c217d993ae492081a8886c08bc960f"
+      domain="https://akashkumar.kinde.com"
+      redirectUri="http://localhost:3000"
+      logoutUri="http://localhost:3000">
+      <Router>
+        <App />
+      </Router>
+    </KindeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

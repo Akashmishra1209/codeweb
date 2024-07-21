@@ -18,6 +18,7 @@ import WhiteBoard from './components/WhiteBoard';
 import Login from './admin/Login';
 import Admin from './admin/Admin';
 import { isAuthenticated } from './admin/auth';
+import Userauth from './components/Userauth';
 function App() {
   const [alert, setalert] = useState(null);
   const showalert = (message, type) => {
@@ -61,7 +62,7 @@ function App() {
           <Route path="/download" element={<Download mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/editor" element={<RichEditor mode={mode} togglemode={togglemode} showalert={showalert} />} />
           <Route path="/board" element={<WhiteBoard mode={mode} togglemode={togglemode} showalert={showalert} />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/userlogin" element={<Userauth />} />
           <Route path="/admin" element={isAuthenticated() ? <Admin /> : <Navigate to="/login" />}/>
           <Route path="/admin/*" element={isAuthenticated() ? <Admin /> : <Navigate to="/login" />}
           />
