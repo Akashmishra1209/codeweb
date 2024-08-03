@@ -6,6 +6,7 @@ import Dashboard from './Dashboard';
 import Users from './Users';
 import Settings from './Settings';
 import { isAuthenticated } from './auth';
+import Addblog from './Addblog';
 
 const Admin = () => {
     if (!isAuthenticated()) {
@@ -20,6 +21,7 @@ const Admin = () => {
                     <Route path="dashboard" element={<Dashboard />} />
                     <Route path="users" element={<Users />} />
                     <Route path="settings" element={<Settings />} />
+                    <Route path="add" element={<Addblog/>}/>
                 </Routes>
             </div>
         </div>
